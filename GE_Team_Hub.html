@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GE Team Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #f4f6f3; color: #1a1a1a; padding: 1.5rem; max-width: 960px; margin: 0 auto; }
+  .hub { display: flex; flex-direction: column; gap: 14px; }
+
+  .hero { background: #084c35; border-radius: 16px; padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+  .hero h1 { color: #fff; font-size: 24px; font-weight: 500; }
+  .hero p { color: rgba(255,255,255,0.65); font-size: 13px; margin-top: 6px; }
+  .hero-right { font-size: 11px; color: rgba(255,255,255,0.45); text-align: right; line-height: 1.6; }
+
+  .card { background: #fff; border: 0.5px solid #e0e0e0; border-radius: 14px; overflow: hidden; }
+  .card-header { padding: 0.75rem 1.25rem; background: #084c35; display: flex; align-items: center; justify-content: space-between; }
+  .card-header-title { font-size: 11px; font-weight: 500; letter-spacing: 0.8px; color: #fff; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
+  .card-header-title i { font-size: 14px; }
+  .card-header-sub { font-size: 11px; color: rgba(255,255,255,0.55); }
+
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+
+  .chip { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+  .arsel     { background: #fef9c3; color: #854d0e; border: 0.5px solid #fde047; }
+  .cina      { background: #ede9fe; color: #4c1d95; border: 0.5px solid #c4b5fd; }
+  .philip    { background: #dcfce7; color: #14532d; border: 0.5px solid #86efac; }
+  .ayna      { background: #dbeafe; color: #1e3a8a; border: 0.5px solid #93c5fd; }
+  .krishelle { background: #fef3c7; color: #78350f; border: 0.5px solid #fcd34d; }
+  .kamala    { background: #fef9c3; color: #854d0e; border: 0.5px solid #fde047; }
+  .samui     { background: #dcfce7; color: #14532d; border: 0.5px solid #86efac; }
+  .east      { background: #fbeaf0; color: #72243e; border: 0.5px solid #f4c0d1; }
+  .samsara   { background: #ede9fe; color: #4c1d95; border: 0.5px solid #c4b5fd; }
+  .millionaire { background: #dbeafe; color: #1e3a8a; border: 0.5px solid #93c5fd; }
+
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th { padding: 8px 6px; font-size: 10px; font-weight: 500; text-align: center; border-right: 0.5px solid #e0e0e0; }
+  th.duty-col { text-align: left; padding-left: 1rem; width: 110px; background: #084c35; color: #fff; border-right: 1px solid rgba(255,255,255,0.2); }
+  .th-mon { background: #1d4ed8; color: #fff; }
+  .th-tue { background: #0f766e; color: #fff; }
+  .th-wed { background: #7c3aed; color: #fff; }
+  .th-thu { background: #b45309; color: #fff; }
+  .th-fri { background: #0f6e56; color: #fff; }
+  .th-sat { background: #be185d; color: #fff; }
+  .th-sun { background: #dc2626; color: #fff; }
+  .day-name { display: block; font-size: 11px; font-weight: 500; }
+  .day-date { display: block; font-size: 10px; opacity: 0.75; margin-top: 1px; }
+  td { padding: 8px 6px; font-size: 11px; text-align: center; border-right: 0.5px solid #e8e8e8; border-top: 0.5px solid #e8e8e8; }
+  td.duty-label { text-align: left; padding-left: 1rem; font-size: 10px; font-weight: 500; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.15); background: #084c35; }
+  td:last-child { border-right: none; }
+  tbody tr:nth-child(odd) { background: #f9fafb; }
+  tbody tr:nth-child(even) { background: #fff; }
+  .note-small { font-size: 9px; color: rgba(255,255,255,0.6); font-style: italic; display: block; }
+
+  .zone-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 1rem; }
+  .zone-card { border-radius: 10px; padding: 1rem 0.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; border: 0.5px solid; }
+  .zone-card i { font-size: 24px; }
+  .zone-count { font-size: 30px; font-weight: 500; line-height: 1; }
+  .zone-name { font-size: 10px; font-weight: 500; line-height: 1.3; }
+  .zc-kamala { background: #fef9c3; color: #854d0e; border-color: #fde047; }
+  .zc-samui { background: #dcfce7; color: #14532d; border-color: #86efac; }
+  .zc-east { background: #fbeaf0; color: #72243e; border-color: #f4c0d1; }
+  .zc-samsara { background: #ede9fe; color: #4c1d95; border-color: #c4b5fd; }
+  .zc-millionaire { background: #dbeafe; color: #1e3a8a; border-color: #93c5fd; }
+
+  .arrivals-table th { text-align: left; padding: 8px 10px; background: #f5f5f5; }
+  .arrivals-table td { text-align: left; padding: 8px 10px; }
+  .arrivals-table td:first-child { font-weight: 500; }
+  .today-row { background: #f0fdf4 !important; }
+  .today-row td:first-child { border-left: 3px solid #0f6e56; }
+
+  .updates-list { list-style: none; padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 10px; }
+  .updates-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #1a1a1a; padding-bottom: 10px; border-bottom: 0.5px solid #eee; line-height: 1.5; }
+  .updates-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .update-dot { width: 8px; height: 8px; border-radius: 50%; background: #0f6e56; flex-shrink: 0; margin-top: 5px; }
+
+  .callout-box { background: #fff7ed; border: 0.5px solid #fed7aa; border-radius: 14px; overflow: hidden; }
+  .callout-header { background: #c2410c; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 8px; }
+  .callout-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
+  .callout-list { list-style: none; padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 10px; }
+  .callout-list li { display: flex; gap: 10px; align-items: center; font-size: 13px; color: #7c2d12; }
+  .callout-list li i { font-size: 16px; color: #c2410c; flex-shrink: 0; }
+
+  .win-box { background: #f0fdf4; border: 0.5px solid #86efac; border-radius: 14px; overflow: hidden; }
+  .win-header { background: #0f6e56; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 8px; }
+  .win-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
+  .win-body { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 12px; }
+  .win-person { display: flex; align-items: center; gap: 12px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: #0f6e56; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 500; font-size: 13px; flex-shrink: 0; }
+  .win-name { font-weight: 500; font-size: 14px; color: #084c35; }
+  .win-reason { font-size: 12px; color: #0f6e56; margin-top: 2px; }
+  .win-tagline { font-size: 12px; color: #0f6e56; font-weight: 500; text-align: center; padding: 0.75rem; border-top: 0.5px solid #86efac; }
+
+  .quote-box { background: #084c35; border-radius: 14px; padding: 1.75rem 2rem; text-align: center; }
+  .quote-text { font-size: 15px; color: #fff; font-style: italic; line-height: 1.7; }
+  .quote-author { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 12px; }
+
+  .links-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 1rem; }
+  .link-btn { background: #f5f7f5; border: 0.5px solid #e0e0e0; border-radius: 10px; padding: 1rem 0.5rem; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; text-decoration: none; transition: background 0.15s; }
+  .link-btn:hover { background: #e8f5ef; border-color: #86efac; }
+  .link-btn i { font-size: 22px; color: #0f6e56; }
+  .link-btn span { font-size: 11px; color: #1a1a1a; font-weight: 500; line-height: 1.3; }
+
+  .footer { text-align: center; padding: 1rem; background: #084c35; border-radius: 14px; }
+  .footer p { font-size: 12px; color: rgba(255,255,255,0.65); font-style: italic; }
+  .footer small { font-size: 10px; color: rgba(255,255,255,0.35); display: block; margin-top: 4px; }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .hero { flex-direction: column; gap: 10px; }
+    .hero-right { text-align: left; }
+    .grid2 { grid-template-columns: 1fr; }
+    .zone-grid { grid-template-columns: repeat(3, 1fr); }
+    .links-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="hub">
+
+  <div class="hero">
+    <div>
+      <h1>GE Team Hub 👋</h1>
+      <p>One team. One goal. Unforgettable guest experiences.</p>
+    </div>
+    <div class="hero-right">Week of Jun 8–14, 2026<br>Last updated by Carol</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title"><i class="ti ti-calendar-week"></i> Weekly duty schedule</div>
+      <span class="card-header-sub">Jun 8–14, 2026</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th class="duty-col">Duty</th>
+          <th class="th-mon"><span class="day-name">Mon</span><span class="day-date">Jun 8</span></th>
+          <th class="th-tue"><span class="day-name">Tue</span><span class="day-date">Jun 9</span></th>
+          <th class="th-wed"><span class="day-name">Wed</span><span class="day-date">Jun 10</span></th>
+          <th class="th-thu"><span class="day-name">Thu</span><span class="day-date">Jun 11</span></th>
+          <th class="th-fri"><span class="day-name">Fri</span><span class="day-date">Jun 12</span></th>
+          <th class="th-sat"><span class="day-name">Sat</span><span class="day-date">Jun 13</span></th>
+          <th class="th-sun"><span class="day-name">Sun</span><span class="day-date">Jun 14</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="duty-label">WhatsApp</td><td><span class="chip arsel">Arsel</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip krishelle">Krishelle</span></td></tr>
+        <tr><td class="duty-label">Respondio</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td></tr>
+        <tr><td class="duty-label">Endorsement<span class="note-small">& Emails</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip cina">Cina</span></td><td><span class="chip krishelle">Krishelle</span></td></tr>
+        <tr><td class="duty-label">Evening shift</td><td><span class="chip krishelle">Krishelle</span></td><td><span class="chip krishelle">Krishelle</span></td><td><span class="chip krishelle">Krishelle</span></td><td><span class="chip krishelle">Krishelle</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title"><i class="ti ti-luggage"></i> Arrivals this week</div>
+      <span class="card-header-sub">15 guests total</span>
+    </div>
+    <div class="zone-grid">
+      <div class="zone-card zc-kamala"><i class="ti ti-beach"></i><div class="zone-count">3</div><div class="zone-name">Kamala Beach</div></div>
+      <div class="zone-card zc-samui"><i class="ti ti-island"></i><div class="zone-count">4</div><div class="zone-name">Samui & Natai</div></div>
+      <div class="zone-card zc-east"><i class="ti ti-sun"></i><div class="zone-count">3</div><div class="zone-name">East</div></div>
+      <div class="zone-card zc-samsara"><i class="ti ti-building-estate"></i><div class="zone-count">4</div><div class="zone-name">Samsara</div></div>
+      <div class="zone-card zc-millionaire"><i class="ti ti-crown"></i><div class="zone-count">1</div><div class="zone-name">Millionaire's Mile</div></div>
+    </div>
+    <table class="arrivals-table">
+      <thead><tr><th style="width:140px">Guest</th><th style="width:75px">Arrival</th><th style="width:80px">Departure</th><th style="width:110px">Zone</th><th>Villa</th></tr></thead>
+      <tbody>
+        <tr class="today-row"><td>Hudson Ball</td><td>Jun 8</td><td>Jun 15</td><td><span class="chip samsara">Samsara</span></td><td>Villa Saengootsa</td></tr>
+        <tr class="today-row"><td>Antoine Markarian</td><td>Jun 8</td><td>Jun 10</td><td><span class="chip samui">Samui & Natai</span></td><td>Villa Raku</td></tr>
+        <tr><td>Kar Weng Wan</td><td>Jun 9</td><td>Jun 12</td><td><span class="chip east">East</span></td><td>Amaravida</td></tr>
+        <tr><td>Greg Plail</td><td>Jun 9</td><td>Jun 16</td><td><span class="chip samui">Samui & Natai</span></td><td>Baan Sairee</td></tr>
+        <tr><td>Li Feng</td><td>Jun 10</td><td>Jun 20</td><td><span class="chip samui">Samui & Natai</span></td><td>Villa Amarelo</td></tr>
+        <tr><td>Li Feng</td><td>Jun 10</td><td>Jun 20</td><td><span class="chip samui">Samui & Natai</span></td><td>Villa Tievoli</td></tr>
+        <tr><td>Premal Doshi</td><td>Jun 10</td><td>Jun 14</td><td><span class="chip kamala">Kamala Beach</span></td><td>Villa Anda</td></tr>
+        <tr><td>Jyotica Topandasani</td><td>Jun 10</td><td>Jun 14</td><td><span class="chip kamala">Kamala Beach</span></td><td>Villa AMANN</td></tr>
+        <tr><td>Carina Ho</td><td>Jun 10</td><td>Jun 14</td><td><span class="chip east">East</span></td><td>Villa Amarapura</td></tr>
+        <tr><td>Harsheel Vithalani</td><td>Jun 11</td><td>Jun 15</td><td><span class="chip kamala">Kamala Beach</span></td><td>Horizon</td></tr>
+        <tr><td>Ankit Agarwal</td><td>Jun 11</td><td>Jun 15</td><td><span class="chip samsara">Samsara</span></td><td>Narissa</td></tr>
+        <tr><td>John Micheline</td><td>Jun 12</td><td>Jun 14</td><td><span class="chip samsara">Samsara</span></td><td>Villa Lomchoy</td></tr>
+        <tr><td>Duangdao Nimitmuenwai</td><td>Jun 12</td><td>Jun 14</td><td><span class="chip east">East</span></td><td>Villa Amaravida</td></tr>
+        <tr><td>Ebrahim Dawood Mamoon</td><td>Jun 13</td><td>Jun 18</td><td><span class="chip samsara">Samsara</span></td><td>Viman</td></tr>
+        <tr><td>Teow Sim</td><td>Jun 13</td><td>Jun 16</td><td><span class="chip millionaire">Millionaire's Mile</span></td><td>Villa Varya</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-title"><i class="ti ti-speakerphone"></i> GE team updates</div>
+      </div>
+      <ul class="updates-list">
+        <li><span class="update-dot"></span><div><strong>Villa Saengootsa</strong> — rooms updated from 5 to 6. Please update all references.</div></li>
+        <li><span class="update-dot"></span><div><strong>Amarasara</strong> — new photos now available. Please update listings accordingly.</div></li>
+      </ul>
+    </div>
+
+    <div class="callout-box">
+      <div class="callout-header">
+        <i class="ti ti-alert-triangle" style="color:#fff; font-size:16px"></i>
+        <span>Callouts this week — please take note</span>
+      </div>
+      <ul class="callout-list">
+        <li><i class="ti ti-message-off"></i>No reply to guest messages</li>
+        <li><i class="ti ti-repeat"></i>Repeat questions being asked</li>
+        <li><i class="ti ti-file-alert"></i>Incomplete details in endorsements</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="win-box">
+    <div class="win-header">
+      <i class="ti ti-trophy" style="color:#fff; font-size:16px"></i>
+      <span>GE Win of the Week</span>
+    </div>
+    <div class="win-body">
+      <div class="win-person">
+        <div class="avatar">AY</div>
+        <div><div class="win-name">Ayna</div><div class="win-reason">Zero callouts this week — great communication and attention to detail!</div></div>
+      </div>
+      <div class="win-person">
+        <div class="avatar">KR</div>
+        <div><div class="win-name">Krishelle</div><div class="win-reason">Zero callouts this week — consistent, reliable, and thorough!</div></div>
+      </div>
+    </div>
+    <div class="win-tagline">Thank you for living our GE values! 💚</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title"><i class="ti ti-link"></i> Quick links</div>
+    </div>
+    <div class="links-grid">
+      <a href="#" class="link-btn"><i class="ti ti-table"></i><span>GE Master Tracker</span></a>
+      <a href="#" class="link-btn"><i class="ti ti-file-spreadsheet"></i><span>Master GE File</span></a>
+      <a href="#" class="link-btn"><i class="ti ti-book"></i><span>GE Slite SOPs</span></a>
+      <a href="#" class="link-btn"><i class="ti ti-map"></i><span>Villa Inventory</span></a>
+      <a href="#" class="link-btn"><i class="ti ti-video"></i><span>Level 10 Meeting</span></a>
+      <a href="#" class="link-btn"><i class="ti ti-forms"></i><span>Guest Forms</span></a>
+      <a href="#" class="link-btn"><i class="ti ti-qrcode"></i><span>Review QR</span></a>
+      <a href="#" class="link-btn"><i class="ti ti-tools-kitchen-2"></i><span>Menu Links</span></a>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <div class="quote-text">"The details are not the details. They make the design — and in hospitality, they make the memory."</div>
+    <div class="quote-author">✨ GE Daily Inspiration</div>
+  </div>
+
+  <div class="footer">
+    <p>🌿 Hospitality is what we do. Impact is why we do it. 💚</p>
+    <small>Week of Jun 8–14, 2026 · Last updated by Carol</small>
+  </div>
+
+</div>
+</body>
+</html>
