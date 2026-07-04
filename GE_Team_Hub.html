@@ -97,11 +97,46 @@
   .ch-bali { background: #fef3c7; color: #78350f; border: 0.5px solid #fcd34d; }
   .ch-north { background: #e0f2fe; color: #0369a1; border: 0.5px solid #7dd3fc; }
 
+  .zone-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; padding: 0.875rem; border-bottom: 0.5px solid #eee; }
+  .zone-card { border-radius: 10px; padding: 0.75rem 0.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; border: 0.5px solid; }
+  .zone-card i { font-size: 20px; }
+  .zone-count { font-size: 24px; font-weight: 500; line-height: 1; }
+  .zone-name { font-size: 10px; font-weight: 500; line-height: 1.3; }
+  .zc-kamala { background: #fef9c3; color: #854d0e; border-color: #fde047; }
+  .zc-samui { background: #dcfce7; color: #14532d; border-color: #86efac; }
+  .zc-east { background: #fbeaf0; color: #72243e; border-color: #f4c0d1; }
+  .zc-samsara { background: #ede9fe; color: #4c1d95; border-color: #c4b5fd; }
+  .zc-millionaire { background: #dbeafe; color: #1e3a8a; border-color: #93c5fd; }
+  .zc-bali { background: #fef3c7; color: #78350f; border-color: #fcd34d; }
+  .zc-north { background: #e0f2fe; color: #0369a1; border-color: #7dd3fc; }
+  .arr-table { width: 100%; border-collapse: collapse; }
+  .arr-table th { text-align: left; padding: 6px 10px; font-size: 10px; font-weight: 500; color: #666; background: #f5f5f5; border-bottom: 0.5px solid #e0e0e0; border-right: 0.5px solid #e0e0e0; white-space: nowrap; }
+  .arr-table th:last-child { border-right: none; }
+  .arr-table td { text-align: left; padding: 5px 10px; font-size: 12px; border-top: 0.5px solid #eee; border-right: 0.5px solid #eee; color: #1a1a1a; white-space: nowrap; }
+  .arr-table td:last-child { border-right: none; }
+  .arr-table td:first-child { font-weight: 500; }
+  .arr-table tbody tr:hover { filter: brightness(0.97); }
+  .date-divider td { background: #084c35 !important; color: #fff; font-size: 11px; font-weight: 500; padding: 4px 10px; letter-spacing: 0.5px; border: none !important; }
+  .row-kamala { background: #fffef0 !important; }
+  .row-samui { background: #f3fef6 !important; }
+  .row-east { background: #fff5f7 !important; }
+  .row-samsara { background: #f8f5ff !important; }
+  .row-millionaire { background: #f0f6ff !important; }
+  .row-bali { background: #fffbf0 !important; }
+  .row-north { background: #f0f9ff !important; }
+  .chip-arr { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+  .ch-kamala { background: #fef9c3; color: #854d0e; border: 0.5px solid #fde047; }
+  .ch-samui { background: #dcfce7; color: #14532d; border: 0.5px solid #86efac; }
+  .ch-east { background: #fbeaf0; color: #72243e; border: 0.5px solid #f4c0d1; }
+  .ch-samsara { background: #ede9fe; color: #4c1d95; border: 0.5px solid #c4b5fd; }
+  .ch-millionaire { background: #dbeafe; color: #1e3a8a; border: 0.5px solid #93c5fd; }
+  .ch-bali { background: #fef3c7; color: #78350f; border: 0.5px solid #fcd34d; }
+  .ch-north { background: #e0f2fe; color: #0369a1; border: 0.5px solid #7dd3fc; }
   .callout-section { background: #fff; border: 0.5px solid #e0e0e0; border-radius: 14px; overflow: hidden; }
   .callout-header { background: #991b1b; padding: 0.7rem 1.25rem; display: flex; align-items: center; gap: 8px; }
   .callout-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
   .callout-sub { font-size: 11px; color: rgba(255,255,255,0.7); margin-left: auto; }
-  .callout-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 0.875rem; }
+  .callout-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; padding: 0.875rem; }
   .callout-card { background: #fff5f5; border: 0.5px solid #fecaca; border-radius: 10px; padding: 0.875rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
   .callout-icon { width: 36px; height: 36px; border-radius: 8px; background: #fee2e2; display: flex; align-items: center; justify-content: center; }
   .callout-icon i { font-size: 18px; color: #991b1b; }
@@ -204,6 +239,55 @@
     </table>
   </div>
 
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title"><i class="ti ti-luggage"></i> Arrivals this week</div>
+      <span class="card-header-sub">23 guests · Jul 6–12, 2026</span>
+    </div>
+    <div class="zone-grid">
+      <div class="zone-card zc-kamala"><i class="ti ti-beach"></i><div class="zone-count">3</div><div class="zone-name">Kamala Beach</div></div>
+      <div class="zone-card zc-samui"><i class="ti ti-island"></i><div class="zone-count">3</div><div class="zone-name">Samui & Natai</div></div>
+      <div class="zone-card zc-east"><i class="ti ti-sun"></i><div class="zone-count">3</div><div class="zone-name">East</div></div>
+      <div class="zone-card zc-samsara"><i class="ti ti-building-estate"></i><div class="zone-count">3</div><div class="zone-name">Samsara</div></div>
+      <div class="zone-card zc-millionaire"><i class="ti ti-crown"></i><div class="zone-count">5</div><div class="zone-name">Millionaire's Mile</div></div>
+      <div class="zone-card zc-bali"><i class="ti ti-palm-tree"></i><div class="zone-count">4</div><div class="zone-name">Bali & S. Phuket</div></div>
+      <div class="zone-card zc-north"><i class="ti ti-map-pin"></i><div class="zone-count">2</div><div class="zone-name">Natai & N. Phuket</div></div>
+    </div>
+    <table class="arr-table">
+      <thead><tr><th>Guest</th><th>Arrival</th><th>Departure</th><th>Zone</th><th>Villa</th></tr></thead>
+      <tbody>
+        <tr class="date-divider"><td colspan="5">📅 Monday, Jul 6</td></tr>
+        <tr class="row-kamala"><td>Anson Hassan</td><td>Jul 6</td><td>Jul 10</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Amann</td></tr>
+        <tr class="row-millionaire"><td>Andrey Voronin</td><td>Jul 6</td><td>Jul 16</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Chelay</td></tr>
+        <tr class="row-samui"><td>Omar AlEbraheem</td><td>Jul 6</td><td>Jul 19</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Raku</td></tr>
+        <tr class="row-kamala"><td>Yin Lee Chan</td><td>Jul 6</td><td>Jul 13</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa La Thale</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Tuesday, Jul 7</td></tr>
+        <tr class="row-bali"><td>Christina Low</td><td>Jul 7</td><td>Jul 12</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Eugenia</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Wednesday, Jul 8</td></tr>
+        <tr class="row-samui"><td>Raymond Kwok</td><td>Jul 8</td><td>Jul 12</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Boonta</td></tr>
+        <tr class="row-samsara"><td>Sultan Manea Almehairi</td><td>Jul 8</td><td>Jul 14</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Hale Malia</td></tr>
+        <tr class="row-millionaire"><td>Nicole Barksdale</td><td>Jul 8</td><td>Jul 13</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa La Prana</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Thursday, Jul 9</td></tr>
+        <tr class="row-east"><td>Abdulla Alsuwaidi</td><td>Jul 9</td><td>Jul 13</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amarapura</td></tr>
+        <tr class="row-east"><td>Sager Almualla</td><td>Jul 9</td><td>Jul 15</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amarasara</td></tr>
+        <tr class="row-north"><td>Matt Rogers</td><td>Jul 9</td><td>Jul 16</td><td><span class="chip-arr ch-north">Natai & N. Phuket</span></td><td>Villa Leelawadee</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Friday, Jul 10</td></tr>
+        <tr class="row-samsara"><td>Sahil Sipani</td><td>Jul 10</td><td>Jul 13</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Rom Trai</td></tr>
+        <tr class="row-samsara"><td>Sahil Sipani</td><td>Jul 10</td><td>Jul 13</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Narissa</td></tr>
+        <tr class="row-bali"><td>Joey Yap</td><td>Jul 10</td><td>Jul 15</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Zai</td></tr>
+        <tr class="row-millionaire"><td>Ning Na Jian</td><td>Jul 10</td><td>Jul 14</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>The Aquila Villa</td></tr>
+        <tr class="row-east"><td>Sally Lai</td><td>Jul 10</td><td>Jul 14</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amaravida</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Saturday, Jul 11</td></tr>
+        <tr class="row-millionaire"><td>Nabeel Albloushi</td><td>Jul 11</td><td>Jul 20</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Varya</td></tr>
+        <tr class="row-bali"><td>Maitha Alremeithi</td><td>Jul 11</td><td>Jul 18</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Amankara</td></tr>
+        <tr class="row-kamala"><td>Juma Khalifa Al Nabooda</td><td>Jul 11</td><td>Jul 18</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Purissara</td></tr>
+        <tr class="row-bali"><td>Jin Wei</td><td>Jul 11</td><td>Jul 16</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Sawarin</td></tr>
+        <tr class="row-north"><td>Fatima Aljokar</td><td>Jul 11</td><td>Jul 16</td><td><span class="chip-arr ch-north">Natai & N. Phuket</span></td><td>Paradiso</td></tr>
+        <tr class="row-samui"><td>Eric Chaussin</td><td>Jul 11</td><td>Jul 23</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Riva</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <div class="callout-section">
     <div class="callout-header">
       <i class="ti ti-alert-triangle" style="color:#fff; font-size:15px"></i>
@@ -236,6 +320,11 @@
         <div class="callout-title">Review Links Protocol</div>
         <div class="callout-desc">Use the review submission list. Google for managed villas only. Website link for unmanaged.</div>
       </div>
+      <div class="callout-card">
+        <div class="callout-icon"><i class="ti ti-checkbox"></i></div>
+        <div class="callout-title">Close Overdue Tasks</div>
+        <div class="callout-desc">If a task is done, mark it as done. Don't leave completed tasks open in the tracker.</div>
+      </div>
     </div>
   </div>
 
@@ -248,7 +337,8 @@
         <li><span class="update-dot"></span><div><strong>Villa Plearn Talee</strong> <span class="new-badge">NEW</span> — New villa in Phuket. Please update your records.</div></li>
         <li><span class="update-dot"></span><div><strong>Villa Kepala</strong> <span class="new-badge">NEW</span> — New villa in Koh Samui. Please update your records.</div></li>
         <li><span class="update-dot"></span><div><strong>Villa Analaya</strong> — New photos updated on the website.</div></li>
-        <li><span class="update-dot"></span><div><strong>Escalation Reminder</strong> — When raising questions, clarifications, or issues, always provide: <strong>Guest Name · Villa · Arrival Date.</strong></div></li>
+        <li><span class="update-dot"></span><div><strong>Daily Reminder</strong> — Make sure your Guest Tracker is updated every day. Do not leave it for later.</div></li>
+        <li><span class="update-dot"></span><div><strong>Escalations</strong> — Always include: <strong>Guest Name · Villa · Arrival Date</strong> when raising questions, clarifications or issues.</div></li>
       </ul>
     </div>
 
