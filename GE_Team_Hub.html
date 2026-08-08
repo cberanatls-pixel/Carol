@@ -23,7 +23,6 @@
   .insp-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #5dcaa5; }
   .insp-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
   .insp-text { font-size: 16px; color: rgba(255,255,255,0.92); font-style: italic; line-height: 1.8; text-align: center; }
-  .insp-sub { font-size: 12px; color: rgba(255,255,255,0.6); text-align: center; margin-top: 6px; font-style: italic; }
   .insp-highlight { color: #5dcaa5; font-style: normal; font-weight: 500; }
   .insp-tagline { font-size: 12px; color: #5dcaa5; font-weight: 500; text-align: center; margin-top: 0.875rem; padding-top: 0.875rem; border-top: 0.5px solid rgba(255,255,255,0.1); letter-spacing: 0.5px; }
 
@@ -40,6 +39,7 @@
   .philip   { background: #dcfce7; color: #14532d; border: 0.5px solid #86efac; }
   .ayna     { background: #dbeafe; color: #1e3a8a; border: 0.5px solid #93c5fd; }
   .michelle { background: #fce7f3; color: #9d174d; border: 0.5px solid #f9a8d4; }
+  .jaimee   { background: #fff0eb; color: #c2410c; border: 0.5px solid #fb923c; }
 
   .sched-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
   .sched-table th { padding: 8px 6px; font-size: 10px; font-weight: 500; text-align: center; border-right: 0.5px solid #e0e0e0; }
@@ -102,6 +102,7 @@
   .callout-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
   .callout-sub { font-size: 11px; color: rgba(255,255,255,0.7); margin-left: auto; }
   .callout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0.875rem; }
+  .callout-grid-2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 0.875rem 0.875rem; }
   .callout-card { background: #fff5f5; border: 0.5px solid #fecaca; border-radius: 10px; padding: 0.875rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
   .callout-icon { width: 36px; height: 36px; border-radius: 8px; background: #fee2e2; display: flex; align-items: center; justify-content: center; }
   .callout-icon i { font-size: 18px; color: #991b1b; }
@@ -117,7 +118,7 @@
   .win-header { background: #0f6e56; padding: 0.7rem 1.25rem; display: flex; align-items: center; gap: 8px; }
   .win-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
   .win-body { padding: 0.875rem 1.25rem; display: flex; align-items: flex-start; gap: 10px; }
-  .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: #1d4ed8; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: #7c3aed; }
   .win-name { font-weight: 500; font-size: 13px; color: #084c35; }
   .win-badge { display: inline-block; background: #0f6e56; color: #fff; font-size: 10px; padding: 1px 7px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
   .win-reason { font-size: 11px; color: #0f6e56; margin-top: 2px; line-height: 1.4; }
@@ -144,6 +145,7 @@
     .grid2 { grid-template-columns: 1fr; }
     .zone-grid { grid-template-columns: repeat(4, 1fr); }
     .callout-grid { grid-template-columns: repeat(2, 1fr); }
+    .callout-grid-2 { grid-template-columns: repeat(2, 1fr); }
     .links-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
@@ -156,7 +158,7 @@
       <h1>GE Team Hub 👋</h1>
       <p>One team. One goal. Unforgettable guest experiences.</p>
     </div>
-    <div class="hero-right">Week of Aug 2–8, 2026<br>Last updated by Carol</div>
+    <div class="hero-right">Week of Aug 9–15, 2026<br>Last updated by Carol</div>
   </div>
 
   <div class="inspiration-box">
@@ -165,36 +167,36 @@
       <div class="insp-line"></div>
     </div>
     <div class="insp-text">
-      "Don't wait for the fire — <span class="insp-highlight">be the sprinkler.</span><br>
-      Anticipate. Solve. Deliver."
+      "The detail you skipped today<br>
+      is the follow-up you'll get tomorrow.<br>
+      <span class="insp-highlight">Re-read. Re-check. Review.</span>"
     </div>
-    <div class="insp-sub">This is your craft. Own it.</div>
     <div class="insp-tagline">Own the booking. Elevate the experience.</div>
   </div>
 
   <div class="card">
     <div class="card-header">
       <div class="card-header-title"><i class="ti ti-calendar-week"></i> Weekly duty schedule</div>
-      <span class="card-header-sub">Aug 2–8, 2026</span>
+      <span class="card-header-sub">Aug 9–15, 2026</span>
     </div>
     <table class="sched-table">
       <thead>
         <tr>
           <th class="duty-col">Duty</th>
-          <th class="th-sun"><span class="day-name">Sun</span><span class="day-date">Aug 2</span></th>
-          <th class="th-mon"><span class="day-name">Mon</span><span class="day-date">Aug 3</span></th>
-          <th class="th-tue"><span class="day-name">Tue</span><span class="day-date">Aug 4</span></th>
-          <th class="th-wed"><span class="day-name">Wed</span><span class="day-date">Aug 5</span></th>
-          <th class="th-thu"><span class="day-name">Thu</span><span class="day-date">Aug 6</span></th>
-          <th class="th-fri"><span class="day-name">Fri</span><span class="day-date">Aug 7</span></th>
-          <th class="th-sat"><span class="day-name">Sat</span><span class="day-date">Aug 8</span></th>
+          <th class="th-sun"><span class="day-name">Sun</span><span class="day-date">Aug 9</span></th>
+          <th class="th-mon"><span class="day-name">Mon</span><span class="day-date">Aug 10</span></th>
+          <th class="th-tue"><span class="day-name">Tue</span><span class="day-date">Aug 11</span></th>
+          <th class="th-wed"><span class="day-name">Wed</span><span class="day-date">Aug 12</span></th>
+          <th class="th-thu"><span class="day-name">Thu</span><span class="day-date">Aug 13</span></th>
+          <th class="th-fri"><span class="day-name">Fri</span><span class="day-date">Aug 14</span></th>
+          <th class="th-sat"><span class="day-name">Sat</span><span class="day-date">Aug 15</span></th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="duty-label">WhatsApp</td><td><span class="chip philip">Philip</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td></tr>
-        <tr><td class="duty-label">Respondio</td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td></tr>
-        <tr><td class="duty-label">Endorsement<span class="note-small">& Emails</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td></tr>
-        <tr><td class="duty-label">Evening shift</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td></tr>
+        <tr><td class="duty-label">WhatsApp</td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td></tr>
+        <tr><td class="duty-label">Respondio</td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip michelle">Michelle</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td></tr>
+        <tr><td class="duty-label">Endorsement<span class="note-small">& Emails</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip ayna">Ayna</span> <span class="chip jaimee">Jaimee</span></td></tr>
+        <tr><td class="duty-label">Evening shift</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -202,53 +204,56 @@
   <div class="card">
     <div class="card-header">
       <div class="card-header-title"><i class="ti ti-luggage"></i> Arrivals this week</div>
-      <span class="card-header-sub">29 guests · Aug 3–9, 2026</span>
+      <span class="card-header-sub">28 guests · Aug 10–16, 2026</span>
     </div>
     <div class="zone-grid">
-      <div class="zone-card zc-kamala"><i class="ti ti-beach"></i><div class="zone-count">9</div><div class="zone-name">Kamala Beach</div></div>
+      <div class="zone-card zc-kamala"><i class="ti ti-beach"></i><div class="zone-count">3</div><div class="zone-name">Kamala Beach</div></div>
       <div class="zone-card zc-samui"><i class="ti ti-island"></i><div class="zone-count">4</div><div class="zone-name">Samui & Natai</div></div>
-      <div class="zone-card zc-east"><i class="ti ti-sun"></i><div class="zone-count">5</div><div class="zone-name">East</div></div>
-      <div class="zone-card zc-samsara"><i class="ti ti-building-estate"></i><div class="zone-count">1</div><div class="zone-name">Samsara</div></div>
-      <div class="zone-card zc-millionaire"><i class="ti ti-crown"></i><div class="zone-count">6</div><div class="zone-name">Millionaire's Mile</div></div>
-      <div class="zone-card zc-bali"><i class="ti ti-palm-tree"></i><div class="zone-count">3</div><div class="zone-name">Bali & S. Phuket</div></div>
-      <div class="zone-card zc-north"><i class="ti ti-map-pin"></i><div class="zone-count">2</div><div class="zone-name">N. Phuket & Natai</div></div>
+      <div class="zone-card zc-east"><i class="ti ti-sun"></i><div class="zone-count">7</div><div class="zone-name">East</div></div>
+      <div class="zone-card zc-samsara"><i class="ti ti-building-estate"></i><div class="zone-count">5</div><div class="zone-name">Samsara</div></div>
+      <div class="zone-card zc-millionaire"><i class="ti ti-crown"></i><div class="zone-count">2</div><div class="zone-name">Millionaire's Mile</div></div>
+      <div class="zone-card zc-bali"><i class="ti ti-palm-tree"></i><div class="zone-count">4</div><div class="zone-name">Bali & S. Phuket</div></div>
+      <div class="zone-card zc-north"><i class="ti ti-map-pin"></i><div class="zone-count">3</div><div class="zone-name">N. Phuket & Natai</div></div>
     </div>
     <table class="arr-table">
       <thead><tr><th>Guest</th><th>Arrival</th><th>Departure</th><th>Zone</th><th>Villa</th></tr></thead>
       <tbody>
-        <tr class="date-divider"><td colspan="5">📅 Sunday, Aug 3</td></tr>
-        <tr class="row-kamala"><td>Borja Prieto</td><td>Aug 3</td><td>Aug 12</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Analaya</td></tr>
-        <tr class="row-kamala"><td>Hyuntae Rho</td><td>Aug 3</td><td>Aug 6</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Chada</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Monday, Aug 4</td></tr>
-        <tr class="row-millionaire"><td>Abdulrahman Sharaf</td><td>Aug 4</td><td>Aug 9</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Mayavee</td></tr>
-        <tr class="row-kamala"><td>Yvette Ng</td><td>Aug 4</td><td>Aug 9</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Amann</td></tr>
-        <tr class="row-bali"><td>Abdulrahman Almuaibid</td><td>Aug 4</td><td>Aug 7</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Akashi</td></tr>
-        <tr class="row-bali"><td>Mohammed Albinali</td><td>Aug 4</td><td>Aug 16</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Amankara</td></tr>
-        <tr class="row-millionaire"><td>Ashish Emanuel</td><td>Aug 4</td><td>Aug 11</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Aye</td></tr>
-        <tr class="row-samui"><td>Benjamin Lee / Katie Chau</td><td>Aug 4</td><td>Aug 9</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Sangsuri 3</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Tuesday, Aug 5</td></tr>
-        <tr class="row-east"><td>Ren Zhengji</td><td>Aug 5</td><td>Aug 10</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Ocean's 11</td></tr>
-        <tr class="row-east"><td>Benson Ling</td><td>Aug 5</td><td>Aug 10</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amarasara</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Thursday, Aug 6</td></tr>
-        <tr class="row-millionaire"><td>Ritishka Grover</td><td>Aug 6</td><td>Aug 10</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Varya</td></tr>
-        <tr class="row-samsara"><td>Aradhitta Goenka</td><td>Aug 6</td><td>Aug 11</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Lomchoy</td></tr>
-        <tr class="row-samui"><td>Robin Hunt</td><td>Aug 6</td><td>Aug 11</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Anavaya</td></tr>
-        <tr class="row-bali"><td>Tanya Rehman</td><td>Aug 6</td><td>Aug 16</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Zai</td></tr>
-        <tr class="row-samui"><td>Juan Tobon</td><td>Aug 6</td><td>Aug 12</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Hin</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Friday, Aug 7</td></tr>
-        <tr class="row-kamala"><td>Ayesha Al Badoor</td><td>Aug 7</td><td>Aug 15</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Anda</td></tr>
-        <tr class="row-east"><td>Evelyn Ng</td><td>Aug 7</td><td>Aug 10</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amaravida</td></tr>
-        <tr class="row-millionaire"><td>Sudhir Sura</td><td>Aug 7</td><td>Aug 10</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Amanzi Kamala</td></tr>
-        <tr class="row-kamala"><td>Yuliana Slashcheva</td><td>Aug 7</td><td>Aug 14</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa La Prana</td></tr>
-        <tr class="row-north"><td>Thanh Nguyen</td><td>Aug 7</td><td>Aug 12</td><td><span class="chip-arr ch-north">Natai & N. Phuket</span></td><td>Villa Boonta</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Monday, Aug 10</td></tr>
+        <tr class="row-samsara"><td>Megha Gupta</td><td>Aug 10</td><td>Aug 14</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Rom Trai</td></tr>
+        <tr class="row-samsara"><td>Megha Gupta</td><td>Aug 10</td><td>Aug 14</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Saengootsa</td></tr>
+        <tr class="row-east"><td>Hang Li</td><td>Aug 10</td><td>Aug 14</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amarasara</td></tr>
+        <tr class="row-east"><td>Keita Shiotani</td><td>Aug 10</td><td>Aug 15</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amaravida</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Tuesday, Aug 11</td></tr>
+        <tr class="row-east"><td>Rossetti Lee</td><td>Aug 11</td><td>Aug 15</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Ocean's 11</td></tr>
+        <tr class="row-bali"><td>Kerry Talbot</td><td>Aug 11</td><td>Aug 21</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Norbu</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Wednesday, Aug 12</td></tr>
+        <tr class="row-samui"><td>Ariel Dan Perry</td><td>Aug 12</td><td>Aug 16</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Anavaya</td></tr>
+        <tr class="row-kamala"><td>Deanne Said</td><td>Aug 12</td><td>Aug 22</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Analaya</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Thursday, Aug 13</td></tr>
+        <tr class="row-millionaire"><td>Balwant Jain</td><td>Aug 13</td><td>Aug 16</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Aye</td></tr>
+        <tr class="row-millionaire"><td>Mohammed AlQallaf</td><td>Aug 13</td><td>Aug 18</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Varya</td></tr>
+        <tr class="row-samui"><td>Bruce Stokes</td><td>Aug 13</td><td>Aug 27</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Hin</td></tr>
+        <tr class="row-samui"><td>Tracey Zheng</td><td>Aug 13</td><td>Aug 17</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Hinyai</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Friday, Aug 14</td></tr>
+        <tr class="row-samsara"><td>Fatma Al Emadi</td><td>Aug 14</td><td>Aug 21</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Saengootsa</td></tr>
+        <tr class="row-samui"><td>Meher Dhingra Soni / Gurdeep Soni</td><td>Aug 14</td><td>Aug 19</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Boonta</td></tr>
+        <tr class="row-bali"><td>Maitha Bellucci</td><td>Aug 14</td><td>Aug 22</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Sawarin</td></tr>
+        <tr class="row-east"><td>Hafsa Al Ulama</td><td>Aug 14</td><td>Aug 26</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amarasara</td></tr>
+        <tr class="row-north"><td>Brianna Hunter</td><td>Aug 14</td><td>Aug 16</td><td><span class="chip-arr ch-north">North Phuket</span></td><td>Villa Paradiso</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Saturday, Aug 15</td></tr>
+        <tr class="row-north"><td>Marwan AlMuhairi</td><td>Aug 15</td><td>Aug 23</td><td><span class="chip-arr ch-north">North Phuket</span></td><td>Villa Haleana</td></tr>
+        <tr class="row-east"><td>Saeed Almehairbi</td><td>Aug 15</td><td>Aug 23</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amaravida</td></tr>
+        <tr class="row-bali"><td>Ruslan Vesterovskiy</td><td>Aug 15</td><td>Aug 28</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Ocean's 11</td></tr>
+        <tr class="row-kamala"><td>Darrell Healey</td><td>Aug 15</td><td>Aug 27</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa La Thale</td></tr>
+        <tr class="row-bali"><td>Sheronda Braziel</td><td>Aug 15</td><td>Aug 22</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Eugenia</td></tr>
+        <tr class="date-divider"><td colspan="5">📅 Sunday, Aug 16</td></tr>
+        <tr class="row-east"><td>Lizzy Sidhwa</td><td>Aug 16</td><td>Aug 23</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Alchemy</td></tr>
+        <tr class="row-north"><td>Chawantorn Srisomburananont</td><td>Aug 16</td><td>Aug 19</td><td><span class="chip-arr ch-north">North Phuket</span></td><td>Villa Paradiso</td></tr>
+        <tr class="row-kamala"><td>Ding Ting</td><td>Aug 16</td><td>Aug 21</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Anda</td></tr>
+        <tr class="row-samsara"><td>Rajat Sikka</td><td>Aug 16</td><td>Aug 19</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Rom Trai</td></tr>
+        <tr class="row-samsara"><td>Chenyun Jiang</td><td>Aug 16</td><td>Aug 19</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Lomchoy</td></tr>
+        <tr class="row-bali"><td>Georgia Kollaras</td><td>Aug 16</td><td>Aug 23</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Zai</td></tr>
         <tr class="row-east"><td>Rashad Sinokrot</td><td>Aug 7</td><td>Aug 13</td><td><span class="chip-arr ch-east">East</span></td><td>Amaravida</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Saturday, Aug 8</td></tr>
-        <tr class="row-kamala"><td>Ronny Chow</td><td>Aug 8</td><td>Aug 12</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Purissara</td></tr>
-        <tr class="row-kamala"><td>Mai Alsulaim</td><td>Aug 8</td><td>Aug 19</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Horizon</td></tr>
-        <tr class="row-north"><td>Lalita Butsayarat</td><td>Aug 8</td><td>Aug 11</td><td><span class="chip-arr ch-north">North Phuket</span></td><td>Villa Paradiso</td></tr>
-        <tr class="row-east"><td>Lin Tingting</td><td>Aug 8</td><td>Aug 14</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Sawarin</td></tr>
-        <tr class="row-millionaire"><td>Essa Sulaiman Ahmad</td><td>Aug 8</td><td>Aug 15</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>The Aquila Villa</td></tr>
-        <tr class="row-samui"><td>Sandra Nowak</td><td>Aug 8</td><td>Aug 16</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Riva</td></tr>
       </tbody>
     </table>
   </div>
@@ -261,19 +266,36 @@
     </div>
     <div class="callout-grid">
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-bell-ringing"></i></div>
-        <div class="callout-title">Guest Updates — Final Reminder</div>
-        <div class="callout-desc">NTE is not automatic. Guests asking for updates means we dropped the ball. Update before they ask.</div>
+        <div class="callout-icon"><i class="ti ti-message-2"></i></div>
+        <div class="callout-title">Guests Should Not Follow Up</div>
+        <div class="callout-desc">If a guest is chasing us — we already missed it. Update proactively. Own the conversation.</div>
       </div>
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-school"></i></div>
-        <div class="callout-title">Educate Guests</div>
-        <div class="callout-desc">Don't just answer — educate. Help guests understand the process so expectations are set correctly from the start.</div>
+        <div class="callout-icon"><i class="ti ti-book"></i></div>
+        <div class="callout-title">Check Your Resources</div>
+        <div class="callout-desc">The answer is there — find it before you ask. We are the experts. Act like it.</div>
       </div>
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-rocket"></i></div>
-        <div class="callout-title">Proactive, Not Reactive</div>
-        <div class="callout-desc">Stop waiting for problems to arrive. Anticipate. Act. Solve it before the guest even knows it was an issue.</div>
+        <div class="callout-icon"><i class="ti ti-eye"></i></div>
+        <div class="callout-title">Re-read. Re-check. Review.</div>
+        <div class="callout-desc">From top to bottom. Every message. Every time. The detail you miss is the follow-up you'll get.</div>
+      </div>
+    </div>
+    <div class="callout-grid-2">
+      <div class="callout-card">
+        <div class="callout-icon"><i class="ti ti-mail"></i></div>
+        <div class="callout-title">Boring Emails</div>
+        <div class="callout-desc">Would you enjoy reading it? If not — rewrite it. Warm, clear, engaging. Every time.</div>
+      </div>
+      <div class="callout-card">
+        <div class="callout-icon"><i class="ti ti-alarm"></i></div>
+        <div class="callout-title">Sense of Urgency</div>
+        <div class="callout-desc">Urgent matters need urgent action. Don't treat everything the same — read the situation and move accordingly.</div>
+      </div>
+      <div class="callout-card">
+        <div class="callout-icon"><i class="ti ti-refresh"></i></div>
+        <div class="callout-title">Consistency</div>
+        <div class="callout-desc">Good one week, same issue the next — that's not progress. Own it. Make it stick. Every single week.</div>
       </div>
     </div>
   </div>
@@ -284,8 +306,8 @@
         <div class="card-header-title"><i class="ti ti-speakerphone"></i> GE team updates</div>
       </div>
       <ul class="updates-list">
-        <li><span class="update-dot"></span><div><strong>CRM Notes</strong> — Utilize the notes section in the CRM. Log what was done for each guest and add your initials for ownership. Example: <strong>Carol Berana — CB</strong></div></li>
-        <li><span class="update-dot"></span><div><strong>Guest Trackers</strong> — Update on time. Every day. No exceptions.</div></li>
+        <li><span class="update-dot"></span><div><strong>IR for Repeat Callouts</strong> — It's not about the weight of the callout. If we have discussed it and it keeps happening — an IR will be raised. Own it before it gets there.</div></li>
+        <li><span class="update-dot"></span><div><strong>Trackers</strong> — Update your guest tracker daily. Do not leave it for later.</div></li>
         <li><span class="update-dot"></span><div><strong>Escalations</strong> — Always include <strong>Villa Name · Guest Name · Arrival Date</strong> when raising questions, approvals or concerns.</div></li>
       </ul>
     </div>
@@ -296,10 +318,10 @@
         <span>GE Win of the Week</span>
       </div>
       <div class="win-body">
-        <div class="avatar">👑</div>
+        <div class="avatar">🌟</div>
         <div>
-          <div class="win-name">Ayna <span class="win-badge">Promoted! 🎉</span></div>
-          <div class="win-reason">Congratulations to Ayna on her promotion to <strong>Senior Guest Experience Specialist!</strong> This is well earned — your consistency, dedication, and heart for service got you here. We are so proud! 💚</div>
+          <div class="win-name">Jaimee <span class="win-badge">Welcome! 🎉</span></div>
+          <div class="win-reason">Welcome to the GE Team, Jaimee! We are so excited to have you with us. Here's to many unforgettable guest experiences together. The team's got your back! 💚</div>
         </div>
       </div>
       <div class="win-tagline">Thank you for living our GE values! 💚</div>
@@ -321,7 +343,7 @@
 
   <div class="footer">
     <p>🌿 Hospitality is what we do. Impact is why we do it. 💚</p>
-    <small>Week of Aug 2–8, 2026 · Last updated by Carol</small>
+    <small>Week of Aug 9–15, 2026 · Last updated by Carol</small>
   </div>
 
 </div>
