@@ -9,143 +9,132 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: #f4f6f3; color: #1a1a1a; padding: 1.5rem; max-width: 980px; margin: 0 auto; }
+  body { font-family: 'DM Sans', sans-serif; background: #f2f2f0; color: #1a1a1a; padding: 1.5rem; max-width: 980px; margin: 0 auto; }
   .hub { display: flex; flex-direction: column; gap: 14px; }
 
-  .hero { background: #084c35; border-radius: 16px; padding: 1.75rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+  /* TLS Palette */
+  /* Black: #1a1a1a | Gold: #c9a84c | Light Gold: #f5e9c8 | Gray: #6b6b6b | Light Gray: #e8e8e6 */
+
+  .hero { background: #1a1a1a; border-radius: 16px; padding: 1.75rem 2rem; display: flex; align-items: center; justify-content: space-between; }
   .hero h1 { color: #fff; font-size: 22px; font-weight: 500; }
-  .hero p { color: rgba(255,255,255,0.65); font-size: 13px; margin-top: 5px; }
-  .hero-right { font-size: 11px; color: rgba(255,255,255,0.45); text-align: right; line-height: 1.6; }
+  .hero p { color: rgba(255,255,255,0.55); font-size: 13px; margin-top: 5px; }
+  .hero-accent { color: #c9a84c; }
+  .hero-right { font-size: 11px; color: rgba(255,255,255,0.35); text-align: right; line-height: 1.6; }
 
-  .inspiration-box { background: #084c35; border-radius: 14px; padding: 1.25rem 2rem; position: relative; overflow: hidden; }
-  .inspiration-box::before { content: '"'; position: absolute; top: -15px; left: 20px; font-size: 100px; color: rgba(255,255,255,0.05); font-family: Georgia, serif; line-height: 1; }
+  .inspiration-box { background: #1a1a1a; border-radius: 14px; padding: 1.25rem 2rem; position: relative; overflow: hidden; }
+  .inspiration-box::before { content: '"'; position: absolute; top: -15px; left: 20px; font-size: 100px; color: rgba(201,168,76,0.08); font-family: Georgia, serif; line-height: 1; }
   .insp-top { display: flex; align-items: center; gap: 8px; margin-bottom: 0.875rem; }
-  .insp-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #5dcaa5; }
-  .insp-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+  .insp-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #c9a84c; }
+  .insp-line { flex: 1; height: 1px; background: rgba(201,168,76,0.25); }
   .insp-text { font-size: 16px; color: rgba(255,255,255,0.92); font-style: italic; line-height: 1.8; text-align: center; }
-  .insp-highlight { color: #5dcaa5; font-style: normal; font-weight: 500; }
-  .insp-tagline { font-size: 12px; color: #5dcaa5; font-weight: 500; text-align: center; margin-top: 0.875rem; padding-top: 0.875rem; border-top: 0.5px solid rgba(255,255,255,0.1); letter-spacing: 0.5px; }
+  .insp-highlight { color: #c9a84c; font-style: normal; font-weight: 500; }
+  .insp-tagline { font-size: 12px; color: #c9a84c; font-weight: 500; text-align: center; margin-top: 0.875rem; padding-top: 0.875rem; border-top: 0.5px solid rgba(201,168,76,0.25); letter-spacing: 0.5px; }
 
-  .card { background: #fff; border: 0.5px solid #e0e0e0; border-radius: 14px; overflow: hidden; }
-  .card-header { padding: 0.7rem 1.25rem; background: #084c35; display: flex; align-items: center; justify-content: space-between; }
+  .card { background: #fff; border: 0.5px solid #e0e0de; border-radius: 14px; overflow: hidden; }
+  .card-header { padding: 0.7rem 1.25rem; background: #1a1a1a; display: flex; align-items: center; justify-content: space-between; }
   .card-header-title { font-size: 11px; font-weight: 500; letter-spacing: 0.8px; color: #fff; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
-  .card-header-title i { font-size: 14px; }
-  .card-header-sub { font-size: 11px; color: rgba(255,255,255,0.55); }
+  .card-header-title i { font-size: 14px; color: #c9a84c; }
+  .card-header-sub { font-size: 11px; color: rgba(255,255,255,0.4); }
   .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
 
+  /* Person chips */
   .chip { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; white-space: nowrap; }
   .arsel    { background: #fef9c3; color: #854d0e; border: 0.5px solid #fde047; }
-  .cina     { background: #ede9fe; color: #4c1d95; border: 0.5px solid #c4b5fd; }
   .philip   { background: #dcfce7; color: #14532d; border: 0.5px solid #86efac; }
   .ayna     { background: #dbeafe; color: #1e3a8a; border: 0.5px solid #93c5fd; }
   .michelle { background: #fce7f3; color: #9d174d; border: 0.5px solid #f9a8d4; }
   .jaimee   { background: #fff0eb; color: #c2410c; border: 0.5px solid #fb923c; }
 
+  /* Schedule */
   .sched-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-  .sched-table th { padding: 8px 6px; font-size: 10px; font-weight: 500; text-align: center; border-right: 0.5px solid #e0e0e0; }
-  .sched-table th.duty-col { text-align: left; padding-left: 1rem; width: 110px; background: #084c35; color: #fff; border-right: 1px solid rgba(255,255,255,0.2); }
-  .th-sun { background: #dc2626; color: #fff; }
-  .th-mon { background: #1d4ed8; color: #fff; }
-  .th-tue { background: #0f766e; color: #fff; }
-  .th-wed { background: #7c3aed; color: #fff; }
-  .th-thu { background: #b45309; color: #fff; }
-  .th-fri { background: #0f6e56; color: #fff; }
-  .th-sat { background: #be185d; color: #fff; }
+  .sched-table th { padding: 8px 6px; font-size: 10px; font-weight: 500; text-align: center; border-right: 0.5px solid #e0e0de; }
+  .sched-table th.duty-col { text-align: left; padding-left: 1rem; width: 110px; background: #1a1a1a; color: #c9a84c; border-right: 1px solid rgba(201,168,76,0.2); }
+  .th-sun { background: #2d2d2d; color: #c9a84c; }
+  .th-mon { background: #333; color: #fff; }
+  .th-tue { background: #2d2d2d; color: #c9a84c; }
+  .th-wed { background: #333; color: #fff; }
+  .th-thu { background: #2d2d2d; color: #c9a84c; }
+  .th-fri { background: #333; color: #fff; }
+  .th-sat { background: #2d2d2d; color: #c9a84c; }
   .day-name { display: block; font-size: 11px; font-weight: 500; }
-  .day-date { display: block; font-size: 10px; opacity: 0.75; margin-top: 1px; }
-  .sched-table td { padding: 7px 6px; font-size: 11px; text-align: center; border-right: 0.5px solid #e8e8e8; border-top: 0.5px solid #e8e8e8; }
-  .sched-table td.duty-label { text-align: left; padding-left: 1rem; font-size: 10px; font-weight: 500; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.15); background: #084c35; }
+  .day-date { display: block; font-size: 10px; opacity: 0.65; margin-top: 1px; }
+  .sched-table td { padding: 7px 6px; font-size: 11px; text-align: center; border-right: 0.5px solid #e8e8e6; border-top: 0.5px solid #e8e8e6; }
+  .sched-table td.duty-label { text-align: left; padding-left: 1rem; font-size: 10px; font-weight: 500; color: #c9a84c; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(201,168,76,0.15); background: #1a1a1a; }
   .sched-table td:last-child { border-right: none; }
-  .sched-table tbody tr:nth-child(odd) { background: #f9fafb; }
+  .sched-table tbody tr:nth-child(odd) { background: #f9f9f8; }
   .sched-table tbody tr:nth-child(even) { background: #fff; }
-  .note-small { font-size: 9px; color: rgba(255,255,255,0.6); font-style: italic; display: block; }
+  .note-small { font-size: 9px; color: rgba(201,168,76,0.7); font-style: italic; display: block; }
 
+  /* Zone summary */
   .zone-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; padding: 0.875rem; border-bottom: 0.5px solid #eee; }
-  .zone-card { border-radius: 10px; padding: 0.75rem 0.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; border: 0.5px solid; }
-  .zone-card i { font-size: 20px; }
-  .zone-count { font-size: 24px; font-weight: 500; line-height: 1; }
-  .zone-name { font-size: 10px; font-weight: 500; line-height: 1.3; }
-  .zc-kamala { background: #fef9c3; color: #854d0e; border-color: #fde047; }
-  .zc-samui { background: #dcfce7; color: #14532d; border-color: #86efac; }
-  .zc-east { background: #fbeaf0; color: #72243e; border-color: #f4c0d1; }
-  .zc-samsara { background: #ede9fe; color: #4c1d95; border-color: #c4b5fd; }
-  .zc-millionaire { background: #dbeafe; color: #1e3a8a; border-color: #93c5fd; }
-  .zc-bali { background: #fef3c7; color: #78350f; border-color: #fcd34d; }
-  .zc-north { background: #e0f2fe; color: #0369a1; border-color: #7dd3fc; }
+  .zone-card { border-radius: 10px; padding: 0.75rem 0.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; border: 0.5px solid #d4b96a; background: #fdf8ee; }
+  .zone-card i { font-size: 20px; color: #c9a84c; }
+  .zone-count { font-size: 24px; font-weight: 500; line-height: 1; color: #1a1a1a; }
+  .zone-name { font-size: 10px; font-weight: 500; line-height: 1.3; color: #6b6b6b; }
 
+  /* Arrivals table */
   .arr-table { width: 100%; border-collapse: collapse; }
-  .arr-table th { text-align: left; padding: 6px 10px; font-size: 10px; font-weight: 500; color: #666; background: #f5f5f5; border-bottom: 0.5px solid #e0e0e0; border-right: 0.5px solid #e0e0e0; white-space: nowrap; }
+  .arr-table th { text-align: left; padding: 6px 10px; font-size: 10px; font-weight: 500; color: #6b6b6b; background: #f5f5f3; border-bottom: 0.5px solid #e0e0de; border-right: 0.5px solid #e0e0de; white-space: nowrap; }
   .arr-table th:last-child { border-right: none; }
   .arr-table td { text-align: left; padding: 5px 10px; font-size: 12px; border-top: 0.5px solid #eee; border-right: 0.5px solid #eee; color: #1a1a1a; white-space: nowrap; }
   .arr-table td:last-child { border-right: none; }
   .arr-table td:first-child { font-weight: 500; }
-  .arr-table tbody tr:hover { filter: brightness(0.97); }
-  .date-divider td { background: #084c35 !important; color: #fff; font-size: 11px; font-weight: 500; padding: 4px 10px; letter-spacing: 0.5px; border: none !important; }
-  .row-kamala { background: #fffef0 !important; }
-  .row-samui { background: #f3fef6 !important; }
-  .row-east { background: #fff5f7 !important; }
-  .row-samsara { background: #f8f5ff !important; }
-  .row-millionaire { background: #f0f6ff !important; }
-  .row-bali { background: #fffbf0 !important; }
-  .row-north { background: #f0f9ff !important; }
-  .chip-arr { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 500; white-space: nowrap; }
-  .ch-kamala { background: #fef9c3; color: #854d0e; border: 0.5px solid #fde047; }
-  .ch-samui { background: #dcfce7; color: #14532d; border: 0.5px solid #86efac; }
-  .ch-east { background: #fbeaf0; color: #72243e; border: 0.5px solid #f4c0d1; }
-  .ch-samsara { background: #ede9fe; color: #4c1d95; border: 0.5px solid #c4b5fd; }
-  .ch-millionaire { background: #dbeafe; color: #1e3a8a; border: 0.5px solid #93c5fd; }
-  .ch-bali { background: #fef3c7; color: #78350f; border: 0.5px solid #fcd34d; }
-  .ch-north { background: #e0f2fe; color: #0369a1; border: 0.5px solid #7dd3fc; }
+  .arr-table tbody tr:hover { background: #fdf8ee !important; }
+  .date-divider td { background: #1a1a1a !important; color: #c9a84c; font-size: 11px; font-weight: 500; padding: 4px 10px; letter-spacing: 0.5px; border: none !important; }
+  .arr-table tbody tr { background: #fff; }
+  .chip-arr { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 500; white-space: nowrap; background: #f5e9c8; color: #7a5c1e; border: 0.5px solid #d4b96a; }
 
-  .callout-section { background: #fff; border: 0.5px solid #e0e0e0; border-radius: 14px; overflow: hidden; }
-  .callout-header { background: #991b1b; padding: 0.7rem 1.25rem; display: flex; align-items: center; gap: 8px; }
+  /* Callouts */
+  .callout-section { background: #fff; border: 0.5px solid #e0e0de; border-radius: 14px; overflow: hidden; }
+  .callout-header { background: #1a1a1a; padding: 0.7rem 1.25rem; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid #c9a84c; }
   .callout-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
-  .callout-sub { font-size: 11px; color: rgba(255,255,255,0.7); margin-left: auto; }
+  .callout-header i { color: #c9a84c; }
+  .callout-sub { font-size: 11px; color: rgba(255,255,255,0.45); margin-left: auto; }
   .callout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0.875rem; }
   .callout-grid-2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 0.875rem 0.875rem; }
-  .callout-card { background: #fff5f5; border: 0.5px solid #fecaca; border-radius: 10px; padding: 0.875rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
-  .callout-icon { width: 36px; height: 36px; border-radius: 8px; background: #fee2e2; display: flex; align-items: center; justify-content: center; }
-  .callout-icon i { font-size: 18px; color: #991b1b; }
-  .callout-title { font-size: 12px; font-weight: 500; color: #7f1d1d; line-height: 1.3; }
-  .callout-desc { font-size: 11px; color: #991b1b; line-height: 1.4; opacity: 0.85; }
+  .callout-card { background: #f9f9f8; border: 0.5px solid #d4b96a; border-radius: 10px; padding: 0.875rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+  .callout-card.positive { background: #fdf8ee; border-color: #c9a84c; }
+  .callout-icon { width: 36px; height: 36px; border-radius: 8px; background: #f5e9c8; display: flex; align-items: center; justify-content: center; }
+  .callout-icon i { font-size: 18px; color: #c9a84c; }
+  .callout-title { font-size: 12px; font-weight: 500; color: #1a1a1a; line-height: 1.3; }
+  .callout-desc { font-size: 11px; color: #6b6b6b; line-height: 1.4; }
 
+  /* Updates */
   .updates-list { list-style: none; padding: 0.875rem 1.25rem; display: flex; flex-direction: column; gap: 6px; }
-  .updates-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; padding-bottom: 6px; border-bottom: 0.5px solid #eee; line-height: 1.5; }
+  .updates-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; padding-bottom: 6px; border-bottom: 0.5px solid #e8e8e6; line-height: 1.5; }
   .updates-list li:last-child { border-bottom: none; padding-bottom: 0; }
-  .update-dot { width: 7px; height: 7px; border-radius: 50%; background: #0f6e56; flex-shrink: 0; margin-top: 5px; }
+  .update-dot { width: 7px; height: 7px; border-radius: 50%; background: #c9a84c; flex-shrink: 0; margin-top: 5px; }
 
-  .win-box { background: #f0fdf4; border: 0.5px solid #86efac; border-radius: 14px; overflow: hidden; }
-  .win-header { background: #0f6e56; padding: 0.7rem 1.25rem; display: flex; align-items: center; gap: 8px; }
+  /* Win */
+  .win-box { background: #fff; border: 0.5px solid #d4b96a; border-radius: 14px; overflow: hidden; }
+  .win-header { background: #1a1a1a; padding: 0.7rem 1.25rem; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid #c9a84c; }
   .win-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
+  .win-header i { color: #c9a84c; }
   .win-body { padding: 0.875rem 1.25rem; display: flex; align-items: flex-start; gap: 10px; }
-  .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: #7c3aed; }
-  .win-name { font-weight: 500; font-size: 13px; color: #084c35; }
-  .win-badge { display: inline-block; background: #0f6e56; color: #fff; font-size: 10px; padding: 1px 7px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
-  .win-reason { font-size: 11px; color: #0f6e56; margin-top: 2px; line-height: 1.4; }
-  .win-tagline { font-size: 12px; color: #0f6e56; font-weight: 500; text-align: center; padding: 0.6rem; border-top: 0.5px solid #86efac; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: #f5e9c8; }
+  .win-name { font-weight: 500; font-size: 13px; color: #1a1a1a; }
+  .win-badge { display: inline-block; background: #c9a84c; color: #fff; font-size: 10px; padding: 1px 7px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
+  .win-reason { font-size: 11px; color: #6b6b6b; margin-top: 2px; line-height: 1.4; }
+  .win-tagline { font-size: 12px; color: #c9a84c; font-weight: 500; text-align: center; padding: 0.6rem; border-top: 0.5px solid #f5e9c8; }
 
+  /* Quick links */
   .links-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 1rem; }
-  .link-btn { border-radius: 12px; padding: 1rem 0.5rem; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; text-decoration: none; transition: all 0.15s; }
-  .link-btn:hover { transform: translateY(-2px); filter: brightness(0.95); }
-  .link-btn i { font-size: 24px; }
-  .link-btn span { font-size: 11px; font-weight: 500; line-height: 1.3; }
-  .lnk-1 { background: #e0f2fe; color: #0369a1; }
-  .lnk-2 { background: #dcfce7; color: #15803d; }
-  .lnk-3 { background: #fef9c3; color: #a16207; }
-  .lnk-4 { background: #fce7f3; color: #9d174d; }
-  .lnk-5 { background: #ede9fe; color: #6d28d9; }
+  .link-btn { border-radius: 12px; padding: 1rem 0.5rem; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; text-decoration: none; transition: all 0.15s; background: #f5e9c8; color: #7a5c1e; border: 0.5px solid #d4b96a; }
+  .link-btn:hover { transform: translateY(-2px); background: #f0dfa8; }
+  .link-btn i { font-size: 24px; color: #c9a84c; }
+  .link-btn span { font-size: 11px; font-weight: 500; line-height: 1.3; color: #1a1a1a; }
 
-  .footer { text-align: center; padding: 1rem; background: #084c35; border-radius: 14px; }
-  .footer p { font-size: 12px; color: rgba(255,255,255,0.65); font-style: italic; }
-  .footer small { font-size: 10px; color: rgba(255,255,255,0.35); display: block; margin-top: 4px; }
+  /* Footer */
+  .footer { text-align: center; padding: 1rem; background: #1a1a1a; border-radius: 14px; border-top: 2px solid #c9a84c; }
+  .footer p { font-size: 12px; color: rgba(255,255,255,0.55); font-style: italic; }
+  .footer small { font-size: 10px; color: rgba(201,168,76,0.5); display: block; margin-top: 4px; }
 
   @media (max-width: 640px) {
     body { padding: 0.75rem; }
     .hero { flex-direction: column; gap: 8px; }
     .grid2 { grid-template-columns: 1fr; }
     .zone-grid { grid-template-columns: repeat(4, 1fr); }
-    .callout-grid { grid-template-columns: repeat(2, 1fr); }
-    .callout-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .callout-grid, .callout-grid-2 { grid-template-columns: repeat(2, 1fr); }
     .links-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
@@ -155,15 +144,15 @@
 
   <div class="hero">
     <div>
-      <h1>GE Team Hub 👋</h1>
+      <h1>GE Team Hub <span class="hero-accent">✦</span></h1>
       <p>One team. One goal. Unforgettable guest experiences.</p>
     </div>
-    <div class="hero-right">Week of Aug 9–15, 2026<br>Last updated by Carol</div>
+    <div class="hero-right">Week of Aug 16–22, 2026<br>Last updated by Carol</div>
   </div>
 
   <div class="inspiration-box">
     <div class="insp-top">
-      <span class="insp-label">🌿 GE Daily Inspiration</span>
+      <span class="insp-label">✦ GE Daily Inspiration</span>
       <div class="insp-line"></div>
     </div>
     <div class="insp-text">
@@ -177,26 +166,26 @@
   <div class="card">
     <div class="card-header">
       <div class="card-header-title"><i class="ti ti-calendar-week"></i> Weekly duty schedule</div>
-      <span class="card-header-sub">Aug 9–15, 2026</span>
+      <span class="card-header-sub">Aug 16–22, 2026</span>
     </div>
     <table class="sched-table">
       <thead>
         <tr>
           <th class="duty-col">Duty</th>
-          <th class="th-sun"><span class="day-name">Sun</span><span class="day-date">Aug 9</span></th>
-          <th class="th-mon"><span class="day-name">Mon</span><span class="day-date">Aug 10</span></th>
-          <th class="th-tue"><span class="day-name">Tue</span><span class="day-date">Aug 11</span></th>
-          <th class="th-wed"><span class="day-name">Wed</span><span class="day-date">Aug 12</span></th>
-          <th class="th-thu"><span class="day-name">Thu</span><span class="day-date">Aug 13</span></th>
-          <th class="th-fri"><span class="day-name">Fri</span><span class="day-date">Aug 14</span></th>
-          <th class="th-sat"><span class="day-name">Sat</span><span class="day-date">Aug 15</span></th>
+          <th class="th-sun"><span class="day-name">Sun</span><span class="day-date">Aug 16</span></th>
+          <th class="th-mon"><span class="day-name">Mon</span><span class="day-date">Aug 17</span></th>
+          <th class="th-tue"><span class="day-name">Tue</span><span class="day-date">Aug 18</span></th>
+          <th class="th-wed"><span class="day-name">Wed</span><span class="day-date">Aug 19</span></th>
+          <th class="th-thu"><span class="day-name">Thu</span><span class="day-date">Aug 20</span></th>
+          <th class="th-fri"><span class="day-name">Fri</span><span class="day-date">Aug 21</span></th>
+          <th class="th-sat"><span class="day-name">Sat</span><span class="day-date">Aug 22</span></th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="duty-label">WhatsApp</td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td></tr>
-        <tr><td class="duty-label">Respondio</td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip michelle">Michelle</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td></tr>
-        <tr><td class="duty-label">Endorsement<span class="note-small">& Emails</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip michelle">Michelle</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip ayna">Ayna</span> <span class="chip jaimee">Jaimee</span></td></tr>
-        <tr><td class="duty-label">Evening shift</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td></tr>
+        <tr><td class="duty-label">WhatsApp</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip philip">Philip</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip philip">Philip</span></td></tr>
+        <tr><td class="duty-label">Respondio</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip philip">Philip</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip philip">Philip</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip philip">Philip</span></td></tr>
+        <tr><td class="duty-label">Endorsement<span class="note-small">& Emails</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip philip">Philip</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip philip">Philip</span> <span class="chip jaimee">Jaimee</span></td></tr>
+        <tr><td class="duty-label">Evening shift</td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -204,98 +193,82 @@
   <div class="card">
     <div class="card-header">
       <div class="card-header-title"><i class="ti ti-luggage"></i> Arrivals this week</div>
-      <span class="card-header-sub">28 guests · Aug 10–16, 2026</span>
+      <span class="card-header-sub">19 guests · Aug 17–23, 2026</span>
     </div>
     <div class="zone-grid">
-      <div class="zone-card zc-kamala"><i class="ti ti-beach"></i><div class="zone-count">3</div><div class="zone-name">Kamala Beach</div></div>
-      <div class="zone-card zc-samui"><i class="ti ti-island"></i><div class="zone-count">4</div><div class="zone-name">Samui & Natai</div></div>
-      <div class="zone-card zc-east"><i class="ti ti-sun"></i><div class="zone-count">7</div><div class="zone-name">East</div></div>
-      <div class="zone-card zc-samsara"><i class="ti ti-building-estate"></i><div class="zone-count">5</div><div class="zone-name">Samsara</div></div>
-      <div class="zone-card zc-millionaire"><i class="ti ti-crown"></i><div class="zone-count">2</div><div class="zone-name">Millionaire's Mile</div></div>
-      <div class="zone-card zc-bali"><i class="ti ti-palm-tree"></i><div class="zone-count">4</div><div class="zone-name">Bali & S. Phuket</div></div>
-      <div class="zone-card zc-north"><i class="ti ti-map-pin"></i><div class="zone-count">3</div><div class="zone-name">N. Phuket & Natai</div></div>
+      <div class="zone-card"><i class="ti ti-beach"></i><div class="zone-count">3</div><div class="zone-name">Kamala Beach</div></div>
+      <div class="zone-card"><i class="ti ti-island"></i><div class="zone-count">4</div><div class="zone-name">Samui & Natai</div></div>
+      <div class="zone-card"><i class="ti ti-sun"></i><div class="zone-count">2</div><div class="zone-name">East</div></div>
+      <div class="zone-card"><i class="ti ti-building-estate"></i><div class="zone-count">1</div><div class="zone-name">Samsara</div></div>
+      <div class="zone-card"><i class="ti ti-crown"></i><div class="zone-count">4</div><div class="zone-name">Millionaire's Mile</div></div>
+      <div class="zone-card"><i class="ti ti-palm-tree"></i><div class="zone-count">3</div><div class="zone-name">Bali & S. Phuket</div></div>
+      <div class="zone-card"><i class="ti ti-map-pin"></i><div class="zone-count">2</div><div class="zone-name">N. Phuket & Natai</div></div>
     </div>
     <table class="arr-table">
       <thead><tr><th>Guest</th><th>Arrival</th><th>Departure</th><th>Zone</th><th>Villa</th></tr></thead>
       <tbody>
-        <tr class="date-divider"><td colspan="5">📅 Monday, Aug 10</td></tr>
-        <tr class="row-samsara"><td>Megha Gupta</td><td>Aug 10</td><td>Aug 14</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Rom Trai</td></tr>
-        <tr class="row-samsara"><td>Megha Gupta</td><td>Aug 10</td><td>Aug 14</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Saengootsa</td></tr>
-        <tr class="row-east"><td>Hang Li</td><td>Aug 10</td><td>Aug 14</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amarasara</td></tr>
-        <tr class="row-east"><td>Keita Shiotani</td><td>Aug 10</td><td>Aug 15</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amaravida</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Tuesday, Aug 11</td></tr>
-        <tr class="row-east"><td>Rossetti Lee</td><td>Aug 11</td><td>Aug 15</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Ocean's 11</td></tr>
-        <tr class="row-bali"><td>Kerry Talbot</td><td>Aug 11</td><td>Aug 21</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Norbu</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Wednesday, Aug 12</td></tr>
-        <tr class="row-samui"><td>Ariel Dan Perry</td><td>Aug 12</td><td>Aug 16</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Anavaya</td></tr>
-        <tr class="row-kamala"><td>Deanne Said</td><td>Aug 12</td><td>Aug 22</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Analaya</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Thursday, Aug 13</td></tr>
-        <tr class="row-millionaire"><td>Balwant Jain</td><td>Aug 13</td><td>Aug 16</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Aye</td></tr>
-        <tr class="row-millionaire"><td>Mohammed AlQallaf</td><td>Aug 13</td><td>Aug 18</td><td><span class="chip-arr ch-millionaire">Millionaire's Mile</span></td><td>Villa Varya</td></tr>
-        <tr class="row-samui"><td>Bruce Stokes</td><td>Aug 13</td><td>Aug 27</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Hin</td></tr>
-        <tr class="row-samui"><td>Tracey Zheng</td><td>Aug 13</td><td>Aug 17</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Hinyai</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Friday, Aug 14</td></tr>
-        <tr class="row-samsara"><td>Fatma Al Emadi</td><td>Aug 14</td><td>Aug 21</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Saengootsa</td></tr>
-        <tr class="row-samui"><td>Meher Dhingra Soni / Gurdeep Soni</td><td>Aug 14</td><td>Aug 19</td><td><span class="chip-arr ch-samui">Samui & Natai</span></td><td>Villa Boonta</td></tr>
-        <tr class="row-bali"><td>Maitha Bellucci</td><td>Aug 14</td><td>Aug 22</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Sawarin</td></tr>
-        <tr class="row-east"><td>Hafsa Al Ulama</td><td>Aug 14</td><td>Aug 26</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amarasara</td></tr>
-        <tr class="row-north"><td>Brianna Hunter</td><td>Aug 14</td><td>Aug 16</td><td><span class="chip-arr ch-north">North Phuket</span></td><td>Villa Paradiso</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Saturday, Aug 15</td></tr>
-        <tr class="row-north"><td>Marwan AlMuhairi</td><td>Aug 15</td><td>Aug 23</td><td><span class="chip-arr ch-north">North Phuket</span></td><td>Villa Haleana</td></tr>
-        <tr class="row-east"><td>Saeed Almehairbi</td><td>Aug 15</td><td>Aug 23</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Amaravida</td></tr>
-        <tr class="row-bali"><td>Ruslan Vesterovskiy</td><td>Aug 15</td><td>Aug 28</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Ocean's 11</td></tr>
-        <tr class="row-kamala"><td>Darrell Healey</td><td>Aug 15</td><td>Aug 27</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa La Thale</td></tr>
-        <tr class="row-bali"><td>Sheronda Braziel</td><td>Aug 15</td><td>Aug 22</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Eugenia</td></tr>
-        <tr class="date-divider"><td colspan="5">📅 Sunday, Aug 16</td></tr>
-        <tr class="row-east"><td>Lizzy Sidhwa</td><td>Aug 16</td><td>Aug 23</td><td><span class="chip-arr ch-east">East</span></td><td>Villa Alchemy</td></tr>
-        <tr class="row-north"><td>Chawantorn Srisomburananont</td><td>Aug 16</td><td>Aug 19</td><td><span class="chip-arr ch-north">North Phuket</span></td><td>Villa Paradiso</td></tr>
-        <tr class="row-kamala"><td>Ding Ting</td><td>Aug 16</td><td>Aug 21</td><td><span class="chip-arr ch-kamala">Kamala Beach</span></td><td>Villa Anda</td></tr>
-        <tr class="row-samsara"><td>Rajat Sikka</td><td>Aug 16</td><td>Aug 19</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Villa Rom Trai</td></tr>
-        <tr class="row-samsara"><td>Chenyun Jiang</td><td>Aug 16</td><td>Aug 19</td><td><span class="chip-arr ch-samsara">Samsara</span></td><td>Lomchoy</td></tr>
-        <tr class="row-bali"><td>Georgia Kollaras</td><td>Aug 16</td><td>Aug 23</td><td><span class="chip-arr ch-bali">Bali & S. Phuket</span></td><td>Villa Zai</td></tr>
-        <tr class="row-east"><td>Rashad Sinokrot</td><td>Aug 7</td><td>Aug 13</td><td><span class="chip-arr ch-east">East</span></td><td>Amaravida</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Sunday, Aug 17</td></tr>
+        <tr><td>Adel Al Redha</td><td>Aug 17</td><td>Aug 24</td><td><span class="chip-arr">Kamala Beach</span></td><td>Villa Borimas</td></tr>
+        <tr><td>Asma Mustafa</td><td>Aug 17</td><td>Aug 21</td><td><span class="chip-arr">Bali & S. Phuket</span></td><td>Villa Tamarama</td></tr>
+        <tr><td>Asma Mustafa</td><td>Aug 17</td><td>Aug 21</td><td><span class="chip-arr">Bali & S. Phuket</span></td><td>Villa Jamadara</td></tr>
+        <tr><td>Joe Tee</td><td>Aug 17</td><td>Aug 21</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>Villa Aye</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Wednesday, Aug 19</td></tr>
+        <tr><td>Rashed Ahli</td><td>Aug 19</td><td>Aug 23</td><td><span class="chip-arr">Samsara</span></td><td>Villa Lomchoy</td></tr>
+        <tr><td>Yoram Zeitoun</td><td>Aug 19</td><td>Aug 26</td><td><span class="chip-arr">Samui & Natai</span></td><td>Anavaya</td></tr>
+        <tr><td>Payal Malhotra</td><td>Aug 19</td><td>Aug 24</td><td><span class="chip-arr">Kamala Beach</span></td><td>Amann</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Thursday, Aug 20</td></tr>
+        <tr><td>Faisal Al Moftah</td><td>Aug 20</td><td>Aug 27</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>Villa Varya</td></tr>
+        <tr><td>Nathalie Saliby</td><td>Aug 20</td><td>Aug 26</td><td><span class="chip-arr">Samui & Natai</span></td><td>Villa Beachfront Paradise</td></tr>
+        <tr><td>Alex Charawani</td><td>Aug 20</td><td>Aug 29</td><td><span class="chip-arr">East</span></td><td>Villa Amarapura</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Friday, Aug 21</td></tr>
+        <tr><td>Felicia Celine</td><td>Aug 21</td><td>Aug 25</td><td><span class="chip-arr">North Phuket</span></td><td>Malaiwana Penthouse</td></tr>
+        <tr><td>Ho Ka Bo</td><td>Aug 21</td><td>Aug 25</td><td><span class="chip-arr">N. Phuket & Natai</span></td><td>Paradiso</td></tr>
+        <tr><td>Alex Yiannikas</td><td>Aug 21</td><td>Aug 29</td><td><span class="chip-arr">Samui & Natai</span></td><td>Villa Emerald</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Saturday, Aug 22</td></tr>
+        <tr><td>Mohamed Sultan Aldhaheri / Ola Halawi</td><td>Aug 22</td><td>Aug 30</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>The Aquila Villa</td></tr>
+        <tr><td>Borja Prieto</td><td>Aug 22</td><td>Aug 27</td><td><span class="chip-arr">Bali & S. Phuket</span></td><td>Villa Amankara</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Sunday, Aug 23</td></tr>
+        <tr><td>Jacob Babu</td><td>Aug 23</td><td>Aug 27</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>Villa Aye</td></tr>
+        <tr><td>Jaclyn India & Frederick Reinert</td><td>Aug 23</td><td>Aug 29</td><td><span class="chip-arr">Samui & Natai</span></td><td>Villa Boonta</td></tr>
+        <tr><td>Rishabh Harsh Mariwala</td><td>Aug 23</td><td>Aug 27</td><td><span class="chip-arr">Kamala Beach</span></td><td>Villa Purissara</td></tr>
+        <tr><td>Haim Emil Dahan</td><td>Aug 23</td><td>Aug 31</td><td><span class="chip-arr">East</span></td><td>Villa Amaravida</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="callout-section">
     <div class="callout-header">
-      <i class="ti ti-alert-triangle" style="color:#fff; font-size:15px"></i>
+      <i class="ti ti-alert-triangle" style="font-size:15px"></i>
       <span>Callouts this week</span>
       <span class="callout-sub">Please take note 👇</span>
     </div>
     <div class="callout-grid">
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-message-2"></i></div>
-        <div class="callout-title">Guests Should Not Follow Up</div>
-        <div class="callout-desc">If a guest is chasing us — we already missed it. Update proactively. Own the conversation.</div>
+        <div class="callout-icon"><i class="ti ti-message-off"></i></div>
+        <div class="callout-title">Response Time</div>
+        <div class="callout-desc">Guests should not be the ones following up. Reply within the required window — every time, no exceptions.</div>
       </div>
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-book"></i></div>
-        <div class="callout-title">Check Your Resources</div>
-        <div class="callout-desc">The answer is there — find it before you ask. We are the experts. Act like it.</div>
+        <div class="callout-icon"><i class="ti ti-ban"></i></div>
+        <div class="callout-title">Guest Follow-Up — Big No</div>
+        <div class="callout-desc">A follow-up from a guest means we dropped the ball. Update proactively. Own the conversation before they ask.</div>
       </div>
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-eye"></i></div>
-        <div class="callout-title">Re-read. Re-check. Review.</div>
-        <div class="callout-desc">From top to bottom. Every message. Every time. The detail you miss is the follow-up you'll get.</div>
+        <div class="callout-icon"><i class="ti ti-hand-stop"></i></div>
+        <div class="callout-title">Don't Just Acknowledge — Handle It</div>
+        <div class="callout-desc">Saying "noted" is not enough. Read the situation and take action. Resolve it. Follow through. Close the loop.</div>
       </div>
     </div>
     <div class="callout-grid-2">
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-mail"></i></div>
-        <div class="callout-title">Boring Emails</div>
-        <div class="callout-desc">Would you enjoy reading it? If not — rewrite it. Warm, clear, engaging. Every time.</div>
+        <div class="callout-icon"><i class="ti ti-clipboard-list"></i></div>
+        <div class="callout-title">Put Requests in FI</div>
+        <div class="callout-desc">Every guest request goes in the FI — no exceptions. If it's not there, it didn't happen.</div>
       </div>
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-alarm"></i></div>
-        <div class="callout-title">Sense of Urgency</div>
-        <div class="callout-desc">Urgent matters need urgent action. Don't treat everything the same — read the situation and move accordingly.</div>
-      </div>
-      <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-refresh"></i></div>
-        <div class="callout-title">Consistency</div>
-        <div class="callout-desc">Good one week, same issue the next — that's not progress. Own it. Make it stick. Every single week.</div>
+        <div class="callout-icon"><i class="ti ti-info-circle"></i></div>
+        <div class="callout-title">Set Expectations</div>
+        <div class="callout-desc">Guests should always know what to expect and when. If there's a delay or process — tell them upfront. No surprises.</div>
       </div>
     </div>
   </div>
@@ -306,25 +279,25 @@
         <div class="card-header-title"><i class="ti ti-speakerphone"></i> GE team updates</div>
       </div>
       <ul class="updates-list">
-        <li><span class="update-dot"></span><div><strong>IR for Repeat Callouts</strong> — It's not about the weight of the callout. If we have discussed it and it keeps happening — an IR will be raised. Own it before it gets there.</div></li>
-        <li><span class="update-dot"></span><div><strong>Trackers</strong> — Update your guest tracker daily. Do not leave it for later.</div></li>
+        <li><span class="update-dot"></span><div><strong>Guest Tracker Notes</strong> — Log what you did on each booking directly in the guest tracker. Format: <strong>8/14/2026 CB — GRO to provide transfers | updated ITI | ffd up on meals.</strong> Use your initials for ownership.</div></li>
+        <li><span class="update-dot"></span><div><strong>Frustrations & Complaints</strong> — Raise to management immediately. If no manager is available, acknowledge the guest and provide a clear timeframe for when one will be.</div></li>
         <li><span class="update-dot"></span><div><strong>Escalations</strong> — Always include <strong>Villa Name · Guest Name · Arrival Date</strong> when raising questions, approvals or concerns.</div></li>
       </ul>
     </div>
 
     <div class="win-box">
       <div class="win-header">
-        <i class="ti ti-trophy" style="color:#fff; font-size:15px"></i>
+        <i class="ti ti-trophy" style="font-size:15px"></i>
         <span>GE Win of the Week</span>
       </div>
       <div class="win-body">
-        <div class="avatar">🌟</div>
+        <div class="avatar">🏆</div>
         <div>
-          <div class="win-name">Jaimee <span class="win-badge">Welcome! 🎉</span></div>
-          <div class="win-reason">Welcome to the GE Team, Jaimee! We are so excited to have you with us. Here's to many unforgettable guest experiences together. The team's got your back! 💚</div>
+          <div class="win-name">The Whole GE Team <span class="win-badge">Keep it up! 🌟</span></div>
+          <div class="win-reason">We have closed a strong number of bookings — and that is a team effort. Every inquiry handled well, every follow-through done right, every conversion counts. The momentum is there. Let's keep pushing and not let it drop. 💛</div>
         </div>
       </div>
-      <div class="win-tagline">Thank you for living our GE values! 💚</div>
+      <div class="win-tagline">Thank you for living our TLS values! ✦</div>
     </div>
   </div>
 
@@ -333,17 +306,17 @@
       <div class="card-header-title"><i class="ti ti-link"></i> Quick links</div>
     </div>
     <div class="links-grid">
-      <a href="https://tlstravel-my.sharepoint.com/:x:/g/personal/sylvain_theluxurysignature_com/EVDA3uwQBUlCsS7hPPkgiq0B5gNwFmz1nb0zsCOUcHCaIw" target="_blank" class="link-btn lnk-1"><i class="ti ti-table"></i><span>GE Master Tracker</span></a>
-      <a href="https://tlstravel-my.sharepoint.com/:x:/r/personal/ge_manager_theluxurysignature_com/_layouts/15/Doc.aspx?sourcedoc=%7BCBBA0832-3229-4E7B-86A8-BDBAC80D3129%7D&file=GE_Tracker%20ver%202.1.xlsx&action=default&mobileredirect=true" target="_blank" class="link-btn lnk-2"><i class="ti ti-file-spreadsheet"></i><span>Master GE File</span></a>
-      <a href="https://theluxurysignature.slite.com/app/channels/04p8peYZfjcUK3" target="_blank" class="link-btn lnk-3"><i class="ti ti-book"></i><span>GE Slite SOPs</span></a>
-      <a href="https://tlstravel-my.sharepoint.com/:f:/g/personal/sylvain_theluxurysignature_com/IgDBoztcMBbVSZsWVj5TBwuYATRgPGr6DSM8jTNT7S0TNw4?e=fakico" target="_blank" class="link-btn lnk-4"><i class="ti ti-map"></i><span>Villa Inventory</span></a>
-      <a href="https://tlstravel-my.sharepoint.com/:x:/r/personal/executiveassistant_theluxurysignature_com/_layouts/15/Doc.aspx?sourcedoc=%7BD9E372AC-8B2A-4D42-A111-F77B81388733%7D&file=Level%2010%20GE%20Weekly%20Meeting%202025.xlsx&action=default&mobileredirect=true" target="_blank" class="link-btn lnk-5"><i class="ti ti-video"></i><span>Level 10 Meeting</span></a>
+      <a href="https://tlstravel-my.sharepoint.com/:x:/g/personal/sylvain_theluxurysignature_com/EVDA3uwQBUlCsS7hPPkgiq0B5gNwFmz1nb0zsCOUcHCaIw" target="_blank" class="link-btn"><i class="ti ti-table"></i><span>GE Master Tracker</span></a>
+      <a href="https://tlstravel-my.sharepoint.com/:x:/r/personal/ge_manager_theluxurysignature_com/_layouts/15/Doc.aspx?sourcedoc=%7BCBBA0832-3229-4E7B-86A8-BDBAC80D3129%7D&file=GE_Tracker%20ver%202.1.xlsx&action=default&mobileredirect=true" target="_blank" class="link-btn"><i class="ti ti-file-spreadsheet"></i><span>Master GE File</span></a>
+      <a href="https://theluxurysignature.slite.com/app/channels/04p8peYZfjcUK3" target="_blank" class="link-btn"><i class="ti ti-book"></i><span>GE Slite SOPs</span></a>
+      <a href="https://tlstravel-my.sharepoint.com/:f:/g/personal/sylvain_theluxurysignature_com/IgDBoztcMBbVSZsWVj5TBwuYATRgPGr6DSM8jTNT7S0TNw4?e=fakico" target="_blank" class="link-btn"><i class="ti ti-map"></i><span>Villa Inventory</span></a>
+      <a href="https://tlstravel-my.sharepoint.com/:x:/r/personal/executiveassistant_theluxurysignature_com/_layouts/15/Doc.aspx?sourcedoc=%7BD9E372AC-8B2A-4D42-A111-F77B81388733%7D&file=Level%2010%20GE%20Weekly%20Meeting%202025.xlsx&action=default&mobileredirect=true" target="_blank" class="link-btn"><i class="ti ti-video"></i><span>Level 10 Meeting</span></a>
     </div>
   </div>
 
   <div class="footer">
-    <p>🌿 Hospitality is what we do. Impact is why we do it. 💚</p>
-    <small>Week of Aug 9–15, 2026 · Last updated by Carol</small>
+    <p>✦ Hospitality is what we do. Impact is why we do it.</p>
+    <small>Week of Aug 16–22, 2026 · Last updated by Carol</small>
   </div>
 
 </div>
