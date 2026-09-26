@@ -38,7 +38,6 @@
   .arsel    { background: #fef9c3; color: #854d0e; border: 0.5px solid #fde047; }
   .philip   { background: #dcfce7; color: #14532d; border: 0.5px solid #86efac; }
   .ayna     { background: #dbeafe; color: #1e3a8a; border: 0.5px solid #93c5fd; }
-  .michelle { background: #fce7f3; color: #9d174d; border: 0.5px solid #f9a8d4; }
   .jaimee   { background: #fff0eb; color: #c2410c; border: 0.5px solid #fb923c; }
 
   .sched-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
@@ -82,7 +81,8 @@
   .callout-header span { color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; }
   .callout-header i { color: #c9a84c; }
   .callout-sub { font-size: 11px; color: rgba(255,255,255,0.45); margin-left: auto; }
-  .callout-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 0.875rem; }
+  .callout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0.875rem; }
+  .callout-grid-2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 0.875rem 0.875rem; }
   .callout-card { background: #f9f9f8; border: 0.5px solid #d4b96a; border-radius: 10px; padding: 0.875rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
   .callout-icon { width: 36px; height: 36px; border-radius: 8px; background: #f5e9c8; display: flex; align-items: center; justify-content: center; }
   .callout-icon i { font-size: 18px; color: #c9a84c; }
@@ -101,8 +101,8 @@
   .win-body { padding: 0.875rem 1.25rem; display: flex; flex-direction: column; gap: 12px; }
   .win-person { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 0.5px solid #f5e9c8; }
   .win-person:last-child { border-bottom: none; padding-bottom: 0; }
+  .avatar-emoji { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; border: 2px solid #c9a84c; background: #f5e9c8; display: flex; align-items: center; justify-content: center; font-size: 28px; }
   .avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid #c9a84c; }
-  .avatar-emoji { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; border: 2px solid #c9a84c; background: #fff0eb; display: flex; align-items: center; justify-content: center; font-size: 28px; }
   .win-name { font-weight: 500; font-size: 13px; color: #1a1a1a; }
   .win-badge { display: inline-block; background: #c9a84c; color: #fff; font-size: 10px; padding: 1px 7px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
   .win-reason { font-size: 11px; color: #6b6b6b; margin-top: 3px; line-height: 1.4; }
@@ -123,7 +123,7 @@
     .hero { flex-direction: column; gap: 8px; }
     .grid2 { grid-template-columns: 1fr; }
     .zone-grid { grid-template-columns: repeat(4, 1fr); }
-    .callout-grid { grid-template-columns: repeat(2, 1fr); }
+    .callout-grid, .callout-grid-2 { grid-template-columns: repeat(2, 1fr); }
     .links-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
@@ -136,7 +136,7 @@
       <h1>GE Team Hub <span class="hero-accent">✦</span></h1>
       <p>One team. One goal. Unforgettable guest experiences.</p>
     </div>
-    <div class="hero-right">Week of Sep 20–26, 2026<br>Last updated by Carol</div>
+    <div class="hero-right">Week of Sep 27 – Oct 3, 2026<br>Last updated by Carol</div>
   </div>
 
   <div class="inspiration-box">
@@ -145,9 +145,9 @@
       <div class="insp-line"></div>
     </div>
     <div class="insp-text">
-      "Consistency is not a mood.<br>
-      It is a decision you make every single day.<br>
-      <span class="insp-highlight">Make it.</span>"
+      "Half done is not done.<br>
+      Every detail has a purpose.<br>
+      <span class="insp-highlight">Own it. All the way through.</span>"
     </div>
     <div class="insp-tagline">Own the booking. Elevate the experience.</div>
   </div>
@@ -155,26 +155,26 @@
   <div class="card">
     <div class="card-header">
       <div class="card-header-title"><i class="ti ti-calendar-week"></i> Weekly duty schedule</div>
-      <span class="card-header-sub">Sep 20–26, 2026</span>
+      <span class="card-header-sub">Sep 27 – Oct 3, 2026</span>
     </div>
     <table class="sched-table">
       <thead>
         <tr>
           <th class="duty-col">Duty</th>
-          <th class="th-sun"><span class="day-name">Sun</span><span class="day-date">Sep 20</span></th>
-          <th class="th-mon"><span class="day-name">Mon</span><span class="day-date">Sep 21</span></th>
-          <th class="th-tue"><span class="day-name">Tue</span><span class="day-date">Sep 22</span></th>
-          <th class="th-wed"><span class="day-name">Wed</span><span class="day-date">Sep 23</span></th>
-          <th class="th-thu"><span class="day-name">Thu</span><span class="day-date">Sep 24</span></th>
-          <th class="th-fri"><span class="day-name">Fri</span><span class="day-date">Sep 25</span></th>
-          <th class="th-sat"><span class="day-name">Sat</span><span class="day-date">Sep 26</span></th>
+          <th class="th-sun"><span class="day-name">Sun</span><span class="day-date">Sep 27</span></th>
+          <th class="th-mon"><span class="day-name">Mon</span><span class="day-date">Sep 28</span></th>
+          <th class="th-tue"><span class="day-name">Tue</span><span class="day-date">Sep 29</span></th>
+          <th class="th-wed"><span class="day-name">Wed</span><span class="day-date">Sep 30</span></th>
+          <th class="th-thu"><span class="day-name">Thu</span><span class="day-date">Oct 1</span></th>
+          <th class="th-fri"><span class="day-name">Fri</span><span class="day-date">Oct 2</span></th>
+          <th class="th-sat"><span class="day-name">Sat</span><span class="day-date">Oct 3</span></th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="duty-label">WhatsApp</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip michelle">Michelle</span></td></tr>
-        <tr><td class="duty-label">Respondio</td><td><span class="chip philip">Philip</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip philip">Philip</span></td></tr>
-        <tr><td class="duty-label">Endorsement<span class="note-small">& Emails</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip michelle">Michelle</span></td></tr>
-        <tr><td class="duty-label">Evening shift</td><td><span class="chip michelle">Michelle</span></td><td><span class="chip michelle">Michelle</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip arsel">Arsel</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span> <span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span></td></tr>
+        <tr><td class="duty-label">WhatsApp</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td></tr>
+        <tr><td class="duty-label">Respondio</td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip philip">Philip</span></td></tr>
+        <tr><td class="duty-label">Endorsement<span class="note-small">& Emails</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip ayna">Ayna</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td><td><span class="chip philip">Philip</span></td></tr>
+        <tr><td class="duty-label">Evening shift</td><td><span class="chip philip">Philip</span></td><td><span class="chip jaimee">Jaimee</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip arsel">Arsel</span></td><td><span class="chip arsel">Arsel</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -182,44 +182,46 @@
   <div class="card">
     <div class="card-header">
       <div class="card-header-title"><i class="ti ti-luggage"></i> Arrivals this week</div>
-      <span class="card-header-sub">18 guests · Sep 22–27, 2026</span>
+      <span class="card-header-sub">21 guests · Sep 30 – Oct 4, 2026</span>
     </div>
     <div class="zone-grid">
       <div class="zone-card"><i class="ti ti-beach"></i><div class="zone-count">3</div><div class="zone-name">Kamala Beach</div></div>
       <div class="zone-card"><i class="ti ti-island"></i><div class="zone-count">2</div><div class="zone-name">Samui & Natai</div></div>
-      <div class="zone-card"><i class="ti ti-sun"></i><div class="zone-count">2</div><div class="zone-name">East</div></div>
-      <div class="zone-card"><i class="ti ti-building-estate"></i><div class="zone-count">7</div><div class="zone-name">Samsara</div></div>
+      <div class="zone-card"><i class="ti ti-sun"></i><div class="zone-count">7</div><div class="zone-name">East</div></div>
+      <div class="zone-card"><i class="ti ti-building-estate"></i><div class="zone-count">5</div><div class="zone-name">Samsara</div></div>
       <div class="zone-card"><i class="ti ti-crown"></i><div class="zone-count">2</div><div class="zone-name">Millionaire's Mile</div></div>
-      <div class="zone-card"><i class="ti ti-palm-tree"></i><div class="zone-count">2</div><div class="zone-name">Bali & S. Phuket</div></div>
-      <div class="zone-card"><i class="ti ti-map-pin"></i><div class="zone-count">0</div><div class="zone-name">N. Phuket & Natai</div></div>
+      <div class="zone-card"><i class="ti ti-palm-tree"></i><div class="zone-count">0</div><div class="zone-name">Bali & S. Phuket</div></div>
+      <div class="zone-card"><i class="ti ti-map-pin"></i><div class="zone-count">1</div><div class="zone-name">N. Phuket & Natai</div></div>
     </div>
     <table class="arr-table">
       <thead><tr><th>Guest</th><th>Arrival</th><th>Departure</th><th>Zone</th><th>Villa</th></tr></thead>
       <tbody>
-        <tr class="date-divider"><td colspan="5">✦ Tuesday, Sep 22</td></tr>
-        <tr><td>Sanchit Gupta</td><td>Sep 22</td><td>Sep 26</td><td><span class="chip-arr">Kamala Beach</span></td><td>Villa Purissara</td></tr>
-        <tr class="date-divider"><td colspan="5">✦ Wednesday, Sep 23</td></tr>
-        <tr><td>Dipak Jobalia</td><td>Sep 23</td><td>Sep 27</td><td><span class="chip-arr">East</span></td><td>Villa Amarapura</td></tr>
-        <tr><td>Gayatri Ruia</td><td>Sep 23</td><td>Sep 27</td><td><span class="chip-arr">Bali & S. Phuket</span></td><td>Villa Zai</td></tr>
-        <tr class="date-divider"><td colspan="5">✦ Thursday, Sep 24</td></tr>
-        <tr><td>Chasity Clark</td><td>Sep 24</td><td>Oct 2</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>Aye</td></tr>
-        <tr><td>Santosh Rao</td><td>Sep 24</td><td>Sep 27</td><td><span class="chip-arr">Samsara</span></td><td>Villa Viman</td></tr>
-        <tr class="date-divider"><td colspan="5">✦ Friday, Sep 25</td></tr>
-        <tr><td>Ankit Chadha</td><td>Sep 25</td><td>Sep 27</td><td><span class="chip-arr">Samsara</span></td><td>Villa Narissa</td></tr>
-        <tr><td>Joanne Gow</td><td>Sep 25</td><td>Sep 28</td><td><span class="chip-arr">Kamala Beach</span></td><td>Villa Amann</td></tr>
-        <tr><td>Omer Feller</td><td>Sep 25</td><td>Oct 3</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>The Aquila Villa</td></tr>
-        <tr><td>Harvey Sheppered</td><td>Sep 25</td><td>Oct 6</td><td><span class="chip-arr">Samui & Natai</span></td><td>Boonta</td></tr>
-        <tr class="date-divider"><td colspan="5">✦ Saturday, Sep 26</td></tr>
-        <tr><td>Dada Zhang</td><td>Sep 26</td><td>Oct 4</td><td><span class="chip-arr">Kamala Beach</span></td><td>Purissara</td></tr>
-        <tr><td>Ed Sammut</td><td>Sep 26</td><td>Oct 3</td><td><span class="chip-arr">Samui & Natai</span></td><td>Villa Puri</td></tr>
-        <tr class="date-divider"><td colspan="5">✦ Sunday, Sep 27</td></tr>
-        <tr><td>Wang Mengyu</td><td>Sep 27</td><td>Oct 1</td><td><span class="chip-arr">East</span></td><td>Villa Amarapura</td></tr>
-        <tr><td>Jatin Thakkar</td><td>Sep 27</td><td>Oct 1</td><td><span class="chip-arr">Samsara</span></td><td>Villa Lomchoy</td></tr>
-        <tr><td>Suki Yong</td><td>Sep 27</td><td>Sep 30</td><td><span class="chip-arr">Samsara</span></td><td>Villa Saengootsa</td></tr>
-        <tr><td>Suki Yong</td><td>Sep 27</td><td>Sep 30</td><td><span class="chip-arr">Samsara</span></td><td>Villa Narissa</td></tr>
-        <tr><td>Suki Yong</td><td>Sep 27</td><td>Sep 30</td><td><span class="chip-arr">Samsara</span></td><td>Villa Viman</td></tr>
-        <tr><td>Suki Yong</td><td>Sep 27</td><td>Sep 30</td><td><span class="chip-arr">Samsara</span></td><td>Villa Rom Trai</td></tr>
-        <tr><td>Parth Maheshwari</td><td>Sep 27</td><td>Oct 1</td><td><span class="chip-arr">Bali & S. Phuket</span></td><td>Villa Zai</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Tuesday, Sep 30</td></tr>
+        <tr><td>Katie Hu</td><td>Sep 30</td><td>Oct 7</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>Villa Chelay</td></tr>
+        <tr><td>Leo Lee</td><td>Sep 30</td><td>Oct 7</td><td><span class="chip-arr">Samsara</span></td><td>Villa Saengootsa</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Thursday, Oct 1</td></tr>
+        <tr><td>Wen Xini</td><td>Oct 1</td><td>Oct 5</td><td><span class="chip-arr">Samsara</span></td><td>Villa Rom Trai</td></tr>
+        <tr><td>Wang Jiang</td><td>Oct 1</td><td>Oct 4</td><td><span class="chip-arr">Kamala Beach</span></td><td>Villa Anda</td></tr>
+        <tr><td>Amulya Goyal</td><td>Oct 1</td><td>Oct 4</td><td><span class="chip-arr">Kamala Beach</span></td><td>Villa Amann</td></tr>
+        <tr><td>Xiaoyuan Fang</td><td>Oct 1</td><td>Oct 6</td><td><span class="chip-arr">Kamala Beach</span></td><td>Villa Analaya</td></tr>
+        <tr><td>Jatin Thakkar</td><td>Oct 1</td><td>Oct 4</td><td><span class="chip-arr">East</span></td><td>Villa Ocean's 11</td></tr>
+        <tr><td>Jatin Thakkar</td><td>Oct 1</td><td>Oct 4</td><td><span class="chip-arr">East</span></td><td>Villa Sawarin</td></tr>
+        <tr><td>Jatin Thakkar</td><td>Oct 1</td><td>Oct 4</td><td><span class="chip-arr">East</span></td><td>Villa Amaravida</td></tr>
+        <tr><td>Amit Sampat</td><td>Oct 1</td><td>Oct 4</td><td><span class="chip-arr">East</span></td><td>Villa Amarasara</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Friday, Oct 2</td></tr>
+        <tr><td>Vivek Golecha</td><td>Oct 2</td><td>Oct 5</td><td><span class="chip-arr">N. Phuket & Natai</span></td><td>Villa Leelawadee</td></tr>
+        <tr><td>Nikhail Shetty</td><td>Oct 2</td><td>Oct 5</td><td><span class="chip-arr">Millionaire's Mile</span></td><td>Villa Aye</td></tr>
+        <tr><td>James Bristow</td><td>Oct 2</td><td>Oct 4</td><td><span class="chip-arr">Samsara</span></td><td>Villa Lomchoy</td></tr>
+        <tr><td>Kyeongsook Huh</td><td>Oct 2</td><td>Oct 5</td><td><span class="chip-arr">Samui & Natai</span></td><td>Villa Hin</td></tr>
+        <tr><td>Mihir Parekh</td><td>Oct 2</td><td>Oct 5</td><td><span class="chip-arr">Samsara</span></td><td>Viman</td></tr>
+        <tr><td>Giuseppe Severgnini</td><td>Oct 2</td><td>Oct 10</td><td><span class="chip-arr">Samui & Natai</span></td><td>Raku</td></tr>
+        <tr><td>Matteo Simone Ravalli</td><td>Oct 2</td><td>Oct 11</td><td><span class="chip-arr">East</span></td><td>Villa Amarapura</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Saturday, Oct 3</td></tr>
+        <tr><td>Cook Chantsuda</td><td>Oct 3</td><td>Oct 5</td><td><span class="chip-arr">Samsara</span></td><td>Villa Narissa</td></tr>
+        <tr><td>Sultan AlShahwarzi</td><td>Oct 3</td><td>Oct 9</td><td><span class="chip-arr">East</span></td><td>Alchemy</td></tr>
+        <tr class="date-divider"><td colspan="5">✦ Sunday, Oct 4</td></tr>
+        <tr><td>Siew Hua Tan</td><td>Oct 4</td><td>Oct 7</td><td><span class="chip-arr">East</span></td><td>Villa Sawarin</td></tr>
+        <tr><td>Siew Hua Tan</td><td>Oct 4</td><td>Oct 7</td><td><span class="chip-arr">East</span></td><td>Villa Amaravida</td></tr>
       </tbody>
     </table>
   </div>
@@ -227,29 +229,41 @@
   <div class="callout-section">
     <div class="callout-header">
       <i class="ti ti-alert-triangle" style="font-size:15px"></i>
-      <span>Callouts this week</span>
+      <span>Callouts & Reminders</span>
       <span class="callout-sub">Please take note 👇</span>
     </div>
     <div class="callout-grid">
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-clipboard-check"></i></div>
-        <div class="callout-title">Log It or Lose It</div>
-        <div class="callout-desc">If it is not in the CRM — it did not happen. Add your tasks. Add your notes. Own every booking from start to finish.</div>
+        <div class="callout-icon"><i class="ti ti-search"></i></div>
+        <div class="callout-title">Check First. Ask Second.</div>
+        <div class="callout-desc">Back read. Check the inventory. Check your tools. The answer is probably already there.</div>
+      </div>
+      <div class="callout-card">
+        <div class="callout-icon"><i class="ti ti-users"></i></div>
+        <div class="callout-title">Villa Team Must Know</div>
+        <div class="callout-desc">Whose zone it is does not matter. If there is an update — the villa team needs to hear it.</div>
+      </div>
+      <div class="callout-card">
+        <div class="callout-icon"><i class="ti ti-hand-stop"></i></div>
+        <div class="callout-title">"Noted" Is Not Enough</div>
+        <div class="callout-desc">Advise the villa team. Add the CRM task. Inform the GE on the zone. Then close the loop.</div>
+      </div>
+    </div>
+    <div class="callout-grid-2">
+      <div class="callout-card">
+        <div class="callout-icon"><i class="ti ti-id-badge"></i></div>
+        <div class="callout-title">Passport Copies — Upload and Share</div>
+        <div class="callout-desc">Guest sent their passport? Upload to OneDrive. Share with the villa team with the FI. Done.</div>
       </div>
       <div class="callout-card">
         <div class="callout-icon"><i class="ti ti-list-details"></i></div>
-        <div class="callout-title">If You're Confused, So Is the Villa</div>
-        <div class="callout-desc">Re-read the FI before sending. If something is unclear to you — clarify it first. A confusing FI creates a confusing experience.</div>
+        <div class="callout-title">FI Status — Follow It</div>
+        <div class="callout-desc">Use the status guidelines. Specify arrival lunch or dinner. Not sure? Reach out — don't guess.</div>
       </div>
       <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-book"></i></div>
-        <div class="callout-title">New Name. Same Standard. Update It.</div>
-        <div class="callout-desc">Reserve. Signature. Select. That is the new brand language. If you spot anything still using the old names — flag it and update it. No exceptions.</div>
-      </div>
-      <div class="callout-card">
-        <div class="callout-icon"><i class="ti ti-search"></i></div>
-        <div class="callout-title">Check Your Resources First</div>
-        <div class="callout-desc">Before you ask the villa team — back read, check the inventory, check your tools. The answer is probably already there. Ask only when you have truly checked everything.</div>
+        <div class="callout-icon"><i class="ti ti-coffee"></i></div>
+        <div class="callout-title">Breakfast — Confirm or Default</div>
+        <div class="callout-desc">Complimentary breakfast included? Confirm preferences. No reply? Indicate the default. Never leave it blank.</div>
       </div>
     </div>
   </div>
@@ -260,9 +274,11 @@
         <div class="card-header-title"><i class="ti ti-speakerphone"></i> GE team updates</div>
       </div>
       <ul class="updates-list">
-        <li><span class="update-dot"></span><div><strong>Respondio Messaging</strong> — Every message costs. Make it count. Acknowledge when you need to — but once you have the answer, send it all in one. Not piece by piece.</div></li>
-        <li><span class="update-dot"></span><div><strong>Brand Rename</strong> — It is now <strong>Reserve, Signature, and Select.</strong> Spot an old name anywhere? Flag it. Update it. Move on.</div></li>
-        <li><span class="update-dot"></span><div><strong>Brand Collections</strong> — Re-read the list. Know it. Use it.</div></li>
+        <li><span class="update-dot"></span><div><strong>Temporary Rezoning</strong> — Philip: Samsara & Millionaire's Mile · Jaimee: Samui, Natai & North Phuket · Arsel: Kamala & Bali / South Phuket · Ayna: East & Niseko</div></li>
+        <li><span class="update-dot"></span><div><strong>New ECI Time</strong> — Early Check-In is now at <strong>9AM</strong>. Update your processes accordingly.</div></li>
+        <li><span class="update-dot"></span><div><strong>T&Cs Updated</strong> — Terms and Conditions have been updated for clarity. Re-read and familiarize.</div></li>
+        <li><span class="update-dot"></span><div><strong>Old Brand Names in Templates</strong> — Still seeing old brand names in documents and templates? Flag them. Update them. It is now <strong>Reserve, Signature, and Select</strong>.</div></li>
+        <li><span class="update-dot"></span><div><strong>Provider Reminders</strong> — Remind your providers of upcoming confirmed services. Do not assume they remember.</div></li>
         <li><span class="update-dot"></span><div><strong>Escalations</strong> — Always include <strong>Villa Name · Guest Name · Arrival Date</strong>. Every single time.</div></li>
       </ul>
     </div>
@@ -274,10 +290,17 @@
       </div>
       <div class="win-body">
         <div class="win-person">
-          <div class="avatar-emoji">🌟</div>
+          <img class="avatar" src="data:image/png;base64,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" alt="Philip"/>
           <div>
-            <div class="win-name">Jaimee <span class="win-badge">3 Reviews MTD ⭐</span></div>
-            <div class="win-reason">3 guest reviews month to date — and still going! Guests are noticing the effort. Keep delivering, Jaimee! 💛</div>
+            <div class="win-name">Philip <span class="win-badge">Regularized! 🎉</span></div>
+            <div class="win-reason">Probationary period done — and done well. Congratulations, Philip! 💛</div>
+          </div>
+        </div>
+        <div class="win-person">
+          <div class="avatar-emoji">🎯</div>
+          <div>
+            <div class="win-name">The Whole GE Team <span class="win-badge">RYS 20% Hit! ⭐</span></div>
+            <div class="win-reason">We hit the 20% RYS target for the month. That is the team showing up — every guest, every review, every time. 💛</div>
           </div>
         </div>
       </div>
@@ -300,7 +323,7 @@
 
   <div class="footer">
     <p>✦ Hospitality is what we do. Impact is why we do it.</p>
-    <small>Week of Sep 20–26, 2026 · Last updated by Carol</small>
+    <small>Week of Sep 27 – Oct 3, 2026 · Last updated by Carol</small>
   </div>
 
 </div>
